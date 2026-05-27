@@ -145,15 +145,14 @@
         <rect x="370" y="312" width="6" height="20" rx="1" fill="#888" stroke="#444"/>
         <!-- inner rack region (just a shaded block) -->
         <rect x="194" y="234" width="172" height="172" fill="#1a1a1a"/>
-        <!-- 6 U dividers with row labels -->
+        <!-- 6 U dividers with row labels (top→bottom: U6 ONT-space, U5 shelf, U4 blank, U3 UDM, U2 PDU, U1 patch) -->
         <g>
-          <!-- row backgrounds (slightly varied) -->
-          <rect x="194" y="234" width="172" height="29" fill="#efeae0"/>  <!-- U6 shelf -->
-          <rect x="194" y="263" width="172" height="29" fill="#0e0e0e"/>  <!-- U5 UDM -->
+          <rect x="194" y="234" width="172" height="29" fill="#262626"/>  <!-- U6 blank (ONT sits on shelf below) -->
+          <rect x="194" y="263" width="172" height="29" fill="#efeae0"/>  <!-- U5 shelf + ONT on top -->
           <rect x="194" y="292" width="172" height="29" fill="#262626"/>  <!-- U4 blank -->
-          <rect x="194" y="321" width="172" height="29" fill="#141414"/>  <!-- U3 patch -->
-          <rect x="194" y="350" width="172" height="29" fill="#262626"/>  <!-- U2 mgmt -->
-          <rect x="194" y="379" width="172" height="29" fill="#0e0e0e"/>  <!-- U1 PDU -->
+          <rect x="194" y="321" width="172" height="29" fill="#0e0e0e"/>  <!-- U3 UDM -->
+          <rect x="194" y="350" width="172" height="29" fill="#0e0e0e"/>  <!-- U2 PDU -->
+          <rect x="194" y="379" width="172" height="29" fill="#141414"/>  <!-- U1 patch -->
           <g stroke="#3a3a3a" stroke-width="0.6">
             <line x1="194" y1="263" x2="366" y2="263"/>
             <line x1="194" y1="292" x2="366" y2="292"/>
@@ -191,13 +190,13 @@
           </g>
         </g>
 
-        <!-- short row tags -->
-        <text x="290" y="252" class="lbl-dark" text-anchor="middle">VENTED SHELF + ONT</text>
-        <text x="290" y="281" class="lbl-light" text-anchor="middle">UDM-SE</text>
+        <!-- short row tags (U6 top → U1 bottom) -->
+        <text x="290" y="252" class="lbl-light" text-anchor="middle">(ONT sits above on shelf)</text>
+        <text x="290" y="281" class="lbl-dark" text-anchor="middle">VENTED SHELF + ONT</text>
         <text x="290" y="310" class="lbl-light" text-anchor="middle">BLANK (airflow)</text>
-        <text x="290" y="339" class="lbl-light" text-anchor="middle">PATCH PANEL</text>
-        <text x="290" y="368" class="lbl-light" text-anchor="middle">CABLE MGMT</text>
-        <text x="290" y="397" class="lbl-light" text-anchor="middle">PDU (12 OUTLETS)</text>
+        <text x="290" y="339" class="lbl-light" text-anchor="middle">UDM-SE</text>
+        <text x="290" y="368" class="lbl-light" text-anchor="middle">PDU (12 OUTLETS)</text>
+        <text x="290" y="397" class="lbl-light" text-anchor="middle">PATCH PANEL</text>
 
         <!-- 4 cabinet-to-plywood mount screws (front-visible heads) -->
         <g fill="#111">
@@ -311,7 +310,7 @@
       <h3>What's pre-purchased — do not buy</h3>
       <ul class="notes">
         <li>NavePoint 6U cabinet, 1U vented shelf, CyberPower PDU, TRENDnet patch panel, UDM-SE, WD Purple 8TB, U-POE-at injector, (3) U7 Pro XG access points.</li>
-        <li>Ray supplies all CAT6 cable, keystones, and patch cables. Ivan home-runs CAT6 from each AP / wall jack to this cabinet — leave <b>10' of slack</b> at the rack end, coiled at U2.</li>
+        <li>Ray supplies all in-wall CAT6 cable and patch-panel keystones. Short 1-ft patch cables (patch-panel-to-UDM) come with the UniFi order — do not buy. Ivan home-runs CAT6 from each AP / wall jack to this cabinet — leave <b>10' of slack</b> at the rack end.</li>
       </ul>
     </div>
   </div>
@@ -546,127 +545,123 @@
       <g><rect x="118" y="292" width="22" height="18" rx="2" fill="#3a3a3a"/><text x="129" y="306" class="urail" text-anchor="middle">U1</text></g>
     </g>
 
-    <!-- U6: 1U vented shelf, ONT on top -->
+    <!-- U6 (top): blank — ONT physically sits in this space, on top of U5 shelf -->
     <g>
-      <rect x="150" y="56" width="786" height="46" fill="#efeae0" stroke="#7a7468"/>
-      <g stroke="#b3ad9d" stroke-width="0.8">
-        <line x1="170" y1="76" x2="916" y2="76"/>
-        <line x1="170" y1="82" x2="916" y2="82"/>
-        <line x1="170" y1="88" x2="916" y2="88"/>
-        <line x1="170" y1="94" x2="916" y2="94"/>
-      </g>
-      <!-- ONT box sitting on top -->
-      <g>
-        <rect x="380" y="32" width="260" height="24" rx="3" fill="#2a2a2a" stroke="#000"/>
-        <circle cx="396" cy="44" r="2.5" fill="#7ee37e"/>
-        <circle cx="408" cy="44" r="2.5" fill="#7ee37e"/>
-        <circle cx="420" cy="44" r="2.5" fill="#ffb84d"/>
-        <text x="510" y="48" class="lbl-light" text-anchor="middle">SONIC FIBER ONT (sits on shelf)</text>
-      </g>
-      <text x="543" y="74" class="lbl-dark" text-anchor="middle">U6  ·  NAVEPOINT 1U VENTED CANTILEVER SHELF  ·  10" DEEP</text>
+      <rect x="150" y="56" width="786" height="46" fill="#262626" stroke="#000"/>
+      <text x="543" y="83" class="lbl-light" text-anchor="middle">U6  ·  (ONT occupies this space — sits on top of the U5 shelf)</text>
     </g>
 
-    <!-- U5: UDM-SE -->
+    <!-- U5: 1U vented shelf, ONT on top -->
     <g>
-      <rect x="150" y="102" width="786" height="46" fill="#0e0e0e" stroke="#000"/>
-      <rect x="166" y="114" width="56" height="22" rx="2" fill="#1f6d52"/>
-      <text x="194" y="130" class="lbl-light" text-anchor="middle">UDM-SE</text>
-      <!-- 8 PoE -->
-      <g fill="#1f1f1f" stroke="#666">
-        <rect x="246" y="115" width="38" height="20"/>
-        <rect x="286" y="115" width="38" height="20"/>
-        <rect x="326" y="115" width="38" height="20"/>
-        <rect x="366" y="115" width="38" height="20"/>
-        <rect x="406" y="115" width="38" height="20"/>
-        <rect x="446" y="115" width="38" height="20"/>
-        <rect x="486" y="115" width="38" height="20"/>
-        <rect x="526" y="115" width="38" height="20"/>
+      <rect x="150" y="102" width="786" height="46" fill="#efeae0" stroke="#7a7468"/>
+      <g stroke="#b3ad9d" stroke-width="0.8">
+        <line x1="170" y1="122" x2="916" y2="122"/>
+        <line x1="170" y1="128" x2="916" y2="128"/>
+        <line x1="170" y1="134" x2="916" y2="134"/>
+        <line x1="170" y1="140" x2="916" y2="140"/>
       </g>
-      <text x="405" y="111" class="lbl-light" text-anchor="middle">8× 1G PoE+ (APs &amp; cameras)</text>
-      <!-- 2 SFP+ -->
-      <g fill="#163b56" stroke="#aaa">
-        <rect x="586" y="115" width="50" height="20"/>
-        <rect x="640" y="115" width="50" height="20"/>
+      <!-- ONT box sitting on top of shelf (in U6 space) -->
+      <g>
+        <rect x="380" y="78" width="260" height="24" rx="3" fill="#2a2a2a" stroke="#000"/>
+        <circle cx="396" cy="90" r="2.5" fill="#7ee37e"/>
+        <circle cx="408" cy="90" r="2.5" fill="#7ee37e"/>
+        <circle cx="420" cy="90" r="2.5" fill="#ffb84d"/>
+        <text x="510" y="94" class="lbl-light" text-anchor="middle">SONIC FIBER ONT (sits on shelf)</text>
       </g>
-      <text x="638" y="111" class="lbl-light" text-anchor="middle">2× 10G SFP+</text>
-      <!-- WAN port -->
-      <rect x="708" y="115" width="48" height="20" fill="#3a1a1a" stroke="#aaa"/>
-      <text x="732" y="111" class="lbl-light" text-anchor="middle">WAN</text>
-      <text x="732" y="129" class="lbl-light" text-anchor="middle">RJ45</text>
-      <!-- HDD bay -->
-      <rect x="780" y="111" width="140" height="28" fill="#1a1a1a" stroke="#7a5a2a" stroke-dasharray="3 3"/>
-      <text x="850" y="129" class="lbl-light" text-anchor="middle" fill="#e4b87a">WD PURPLE 8TB (in bay)</text>
-      <text x="543" y="161" class="lbl-dark" text-anchor="middle">U5  ·  UBIQUITI DREAM MACHINE SE  —  router / controller / 8-port PoE switch / Protect NVR</text>
+      <text x="543" y="120" class="lbl-dark" text-anchor="middle">U5  ·  NAVEPOINT 1U VENTED CANTILEVER SHELF  ·  10" DEEP</text>
     </g>
 
     <!-- U4: blank -->
     <g>
       <rect x="150" y="148" width="786" height="46" fill="#262626" stroke="#000"/>
-      <text x="543" y="176" class="lbl-light" text-anchor="middle">U4  ·  BLANK PANEL  (airflow gap · reserved for future UniFi Pro 24 PoE)</text>
+      <text x="543" y="176" class="lbl-light" text-anchor="middle">U4  ·  BLANK PANEL  (airflow gap above UDM-SE · reserved for future UniFi Pro 24 PoE)</text>
     </g>
 
-    <!-- U3: patch panel -->
+    <!-- U3: UDM-SE -->
     <g>
-      <rect x="150" y="194" width="786" height="46" fill="#141414" stroke="#000"/>
-      <!-- 24 keystones, 2 banks of 12 -->
-      <g fill="#d6d6d6" stroke="#000" stroke-width="0.4">
-        <g>
-          <rect x="178" y="205" width="22" height="22"/><rect x="202" y="205" width="22" height="22"/>
-          <rect x="226" y="205" width="22" height="22"/><rect x="250" y="205" width="22" height="22"/>
-          <rect x="274" y="205" width="22" height="22"/><rect x="298" y="205" width="22" height="22"/>
-          <rect x="322" y="205" width="22" height="22"/><rect x="346" y="205" width="22" height="22"/>
-          <rect x="370" y="205" width="22" height="22"/><rect x="394" y="205" width="22" height="22"/>
-          <rect x="418" y="205" width="22" height="22"/><rect x="442" y="205" width="22" height="22"/>
-        </g>
-        <g transform="translate(394 0)">
-          <rect x="178" y="205" width="22" height="22"/><rect x="202" y="205" width="22" height="22"/>
-          <rect x="226" y="205" width="22" height="22"/><rect x="250" y="205" width="22" height="22"/>
-          <rect x="274" y="205" width="22" height="22"/><rect x="298" y="205" width="22" height="22"/>
-          <rect x="322" y="205" width="22" height="22"/><rect x="346" y="205" width="22" height="22"/>
-          <rect x="370" y="205" width="22" height="22"/><rect x="394" y="205" width="22" height="22"/>
-          <rect x="418" y="205" width="22" height="22"/><rect x="442" y="205" width="22" height="22"/>
-        </g>
+      <rect x="150" y="194" width="786" height="46" fill="#0e0e0e" stroke="#000"/>
+      <rect x="166" y="206" width="56" height="22" rx="2" fill="#1f6d52"/>
+      <text x="194" y="222" class="lbl-light" text-anchor="middle">UDM-SE</text>
+      <!-- 8 PoE -->
+      <g fill="#1f1f1f" stroke="#666">
+        <rect x="246" y="207" width="38" height="20"/>
+        <rect x="286" y="207" width="38" height="20"/>
+        <rect x="326" y="207" width="38" height="20"/>
+        <rect x="366" y="207" width="38" height="20"/>
+        <rect x="406" y="207" width="38" height="20"/>
+        <rect x="446" y="207" width="38" height="20"/>
+        <rect x="486" y="207" width="38" height="20"/>
+        <rect x="526" y="207" width="38" height="20"/>
       </g>
-      <text x="543" y="237" class="lbl-light" text-anchor="middle">U3  ·  TRENDnet 24-PORT KEYSTONE PATCH PANEL  —  terminates every house CAT6 home run</text>
-    </g>
-
-    <!-- U2: cable management -->
-    <g>
-      <rect x="150" y="240" width="786" height="46" fill="#262626" stroke="#000"/>
-      <g stroke="#888" stroke-width="1.4">
-        <line x1="170" y1="256" x2="916" y2="256"/>
-        <line x1="170" y1="270" x2="916" y2="270"/>
+      <text x="405" y="203" class="lbl-light" text-anchor="middle">8× 1G PoE+ (APs &amp; cameras)</text>
+      <!-- 2 SFP+ -->
+      <g fill="#163b56" stroke="#aaa">
+        <rect x="586" y="207" width="50" height="20"/>
+        <rect x="640" y="207" width="50" height="20"/>
       </g>
-      <text x="543" y="281" class="lbl-light" text-anchor="middle">U2  ·  HORIZONTAL CABLE MANAGEMENT  ·  service loops live here · velcro only, no zip ties</text>
+      <text x="638" y="203" class="lbl-light" text-anchor="middle">2× 10G SFP+</text>
+      <!-- WAN port -->
+      <rect x="708" y="207" width="48" height="20" fill="#3a1a1a" stroke="#aaa"/>
+      <text x="732" y="203" class="lbl-light" text-anchor="middle">WAN</text>
+      <text x="732" y="221" class="lbl-light" text-anchor="middle">RJ45</text>
+      <!-- HDD bay -->
+      <rect x="780" y="203" width="140" height="28" fill="#1a1a1a" stroke="#7a5a2a" stroke-dasharray="3 3"/>
+      <text x="850" y="221" class="lbl-light" text-anchor="middle" fill="#e4b87a">WD PURPLE 8TB (in bay)</text>
+      <text x="543" y="237" class="lbl-light" text-anchor="middle">U3  ·  UBIQUITI DREAM MACHINE SE  —  router / controller / 8-port PoE switch / Protect NVR</text>
     </g>
 
-    <!-- U1: PDU -->
+    <!-- U2: PDU (between UDM-SE and patch panel) -->
     <g>
-      <rect x="150" y="286" width="786" height="46" fill="#0e0e0e" stroke="#000"/>
+      <rect x="150" y="240" width="786" height="46" fill="#0e0e0e" stroke="#000"/>
       <defs>
         <g id="outlet">
           <rect x="0" y="0" width="38" height="30" rx="3" fill="#d8d8d8" stroke="#000" stroke-width="0.4"/>
-          <circle cx="12" cy="9" r="2.2" fill="#000"/>
-          <circle cx="26" cy="9" r="2.2" fill="#000"/>
-          <rect x="16" y="16" width="6" height="10" fill="#000"/>
+          <rect x="11" y="6" width="3" height="14" fill="#000"/>
+          <rect x="24" y="7" width="3" height="13" fill="#000"/>
+          <path d="M16 22 a3 3 0 1 0 6 0 v-1 h-6 z" fill="#000"/>
         </g>
       </defs>
-      <use href="#outlet" x="172" y="294"/>
-      <use href="#outlet" x="224" y="294"/>
-      <use href="#outlet" x="276" y="294"/>
-      <use href="#outlet" x="328" y="294"/>
-      <use href="#outlet" x="380" y="294"/>
-      <use href="#outlet" x="432" y="294"/>
-      <use href="#outlet" x="484" y="294"/>
+      <use href="#outlet" x="172" y="248"/>
+      <use href="#outlet" x="224" y="248"/>
+      <use href="#outlet" x="276" y="248"/>
+      <use href="#outlet" x="328" y="248"/>
+      <use href="#outlet" x="380" y="248"/>
+      <use href="#outlet" x="432" y="248"/>
+      <use href="#outlet" x="484" y="248"/>
       <!-- breaker -->
-      <rect x="546" y="298" width="50" height="22" fill="#b33" stroke="#000"/>
-      <text x="571" y="313" class="lbl-light" text-anchor="middle">15A CB</text>
+      <rect x="546" y="252" width="50" height="22" fill="#b33" stroke="#000"/>
+      <text x="571" y="267" class="lbl-light" text-anchor="middle">15A CB</text>
       <!-- main switch -->
-      <rect x="606" y="298" width="56" height="22" fill="#222" stroke="#666"/>
-      <text x="634" y="313" class="lbl-light" text-anchor="middle">MAIN PWR</text>
+      <rect x="606" y="252" width="56" height="22" fill="#222" stroke="#666"/>
+      <text x="634" y="267" class="lbl-light" text-anchor="middle">MAIN PWR</text>
       <!-- brand -->
-      <text x="850" y="313" class="lbl-light" text-anchor="middle">CyberPower CPS1215RMS</text>
-      <text x="543" y="328" class="lbl-light" text-anchor="middle" fill="#cdcabe">U1  ·  1U RACKMOUNT SURGE PDU  ·  12 × NEMA 5-15R  ·  powers everything above</text>
+      <text x="850" y="267" class="lbl-light" text-anchor="middle">CyberPower CPS1215RMS</text>
+      <text x="543" y="282" class="lbl-light" text-anchor="middle">U2  ·  1U RACKMOUNT SURGE PDU  ·  12 × NEMA 5-15R  ·  powers everything in the rack</text>
+    </g>
+
+    <!-- U1: patch panel (bottom, closest to bottom cable knockouts) -->
+    <g>
+      <rect x="150" y="286" width="786" height="46" fill="#141414" stroke="#000"/>
+      <!-- 24 keystones, 2 banks of 12 -->
+      <g fill="#d6d6d6" stroke="#000" stroke-width="0.4">
+        <g>
+          <rect x="178" y="297" width="22" height="22"/><rect x="202" y="297" width="22" height="22"/>
+          <rect x="226" y="297" width="22" height="22"/><rect x="250" y="297" width="22" height="22"/>
+          <rect x="274" y="297" width="22" height="22"/><rect x="298" y="297" width="22" height="22"/>
+          <rect x="322" y="297" width="22" height="22"/><rect x="346" y="297" width="22" height="22"/>
+          <rect x="370" y="297" width="22" height="22"/><rect x="394" y="297" width="22" height="22"/>
+          <rect x="418" y="297" width="22" height="22"/><rect x="442" y="297" width="22" height="22"/>
+        </g>
+        <g transform="translate(394 0)">
+          <rect x="178" y="297" width="22" height="22"/><rect x="202" y="297" width="22" height="22"/>
+          <rect x="226" y="297" width="22" height="22"/><rect x="250" y="297" width="22" height="22"/>
+          <rect x="274" y="297" width="22" height="22"/><rect x="298" y="297" width="22" height="22"/>
+          <rect x="322" y="297" width="22" height="22"/><rect x="346" y="297" width="22" height="22"/>
+          <rect x="370" y="297" width="22" height="22"/><rect x="394" y="297" width="22" height="22"/>
+          <rect x="418" y="297" width="22" height="22"/><rect x="442" y="297" width="22" height="22"/>
+        </g>
+      </g>
+      <text x="543" y="328" class="lbl-light" text-anchor="middle">U1  ·  TRENDnet 24-PORT KEYSTONE PATCH PANEL  —  terminates every house CAT6 home run (entries from bottom knockouts)</text>
     </g>
 
   </svg>
@@ -674,7 +669,7 @@
 
 <!-- =========== PATCHING DIAGRAM =========== -->
 <h2>Patching — patch panel to UDM-SE</h2>
-<p>Short Cat6 patch cables (Ray supplies, 1–2 ft) jump from the keystone on the patch panel up to a PoE+ port on the UDM-SE. One cable per device. Label both ends with the destination room.</p>
+<p>Short 1-ft Cat6 patch cables (<b>included in the UniFi order US5474906</b>, not separately purchased) jump from each keystone on the patch panel up to a PoE+ port on the UDM-SE. One cable per device. Label both ends with the destination room.</p>
 
 <div class="stage">
   <svg viewBox="0 0 1040 460" xmlns="http://www.w3.org/2000/svg" aria-label="Patch panel to UDM-SE patching diagram">
@@ -682,7 +677,7 @@
     <rect x="40" y="20" width="960" height="420" rx="6" fill="#161616" stroke="#111" stroke-width="2"/>
     <text x="60" y="42" class="lbl-light">INSIDE CABINET — front of rails view</text>
 
-    <!-- UDM-SE strip at top (U5) -->
+    <!-- UDM-SE strip at top (U3, with U5 shelf area above for the injector callout) -->
     <g>
       <rect x="80" y="58" width="880" height="58" fill="#0e0e0e" stroke="#000"/>
       <rect x="96" y="72" width="64" height="30" rx="2" fill="#1f6d52"/>
@@ -742,11 +737,11 @@
       <rect x="810" y="70" width="140" height="32" fill="#1a1a1a" stroke="#7a5a2a" stroke-dasharray="3 3"/>
       <text x="880" y="91" class="lbl-light" text-anchor="middle" fill="#e4b87a">WD PURPLE 8TB</text>
 
-      <!-- U5 label -->
-      <g><rect x="56" y="74" width="22" height="18" rx="2" fill="#3a3a3a"/><text x="67" y="88" class="urail" text-anchor="middle">U5</text></g>
+      <!-- U3 label (UDM-SE) -->
+      <g><rect x="56" y="74" width="22" height="18" rx="2" fill="#3a3a3a"/><text x="67" y="88" class="urail" text-anchor="middle">U3</text></g>
     </g>
 
-    <!-- Patch panel strip at bottom (U3) -->
+    <!-- Patch panel strip at bottom (U1) -->
     <g>
       <rect x="80" y="310" width="880" height="58" fill="#141414" stroke="#000"/>
 
@@ -793,13 +788,27 @@
         <text x="799" y="343">22</text> <text x="831" y="343">23</text> <text x="863" y="343">24</text>
       </g>
       <text x="500" y="384" class="lbl-light" text-anchor="middle">TRENDnet 24-port keystone patch panel — front face</text>
-      <g><rect x="56" y="326" width="22" height="18" rx="2" fill="#3a3a3a"/><text x="67" y="340" class="urail" text-anchor="middle">U3</text></g>
+      <g><rect x="56" y="326" width="22" height="18" rx="2" fill="#3a3a3a"/><text x="67" y="340" class="urail" text-anchor="middle">U1</text></g>
     </g>
 
-    <!-- U4 blank in the middle -->
-    <rect x="80" y="186" width="880" height="46" fill="#262626" stroke="#000"/>
-    <text x="500" y="213" class="lbl-light" text-anchor="middle" opacity="0.8">U4 blank (cables pass behind / through this space)</text>
-    <g><rect x="56" y="198" width="22" height="18" rx="2" fill="#3a3a3a"/><text x="67" y="212" class="urail" text-anchor="middle">U4</text></g>
+    <!-- U2 PDU strip in the middle (between UDM-SE and patch panel) -->
+    <g>
+      <rect x="80" y="186" width="880" height="46" fill="#0e0e0e" stroke="#000"/>
+      <!-- minimalist 7 outlets to suggest the PDU face -->
+      <g fill="#cfcfcf" stroke="#000" stroke-width="0.4">
+        <rect x="180" y="194" width="32" height="28" rx="2"/>
+        <rect x="220" y="194" width="32" height="28" rx="2"/>
+        <rect x="260" y="194" width="32" height="28" rx="2"/>
+        <rect x="300" y="194" width="32" height="28" rx="2"/>
+        <rect x="340" y="194" width="32" height="28" rx="2"/>
+        <rect x="380" y="194" width="32" height="28" rx="2"/>
+        <rect x="420" y="194" width="32" height="28" rx="2"/>
+      </g>
+      <rect x="470" y="198" width="40" height="20" fill="#b33" stroke="#000"/>
+      <text x="490" y="212" class="lbl-light" text-anchor="middle">15A CB</text>
+      <text x="700" y="212" class="lbl-light" text-anchor="middle">U2 · CyberPower PDU (patch cables skirt past on the right rail)</text>
+      <g><rect x="56" y="198" width="22" height="18" rx="2" fill="#3a3a3a"/><text x="67" y="212" class="urail" text-anchor="middle">U2</text></g>
+    </g>
 
     <!-- ============ PATCH CABLES ============ -->
     <!-- Each cable: bezier from patch port center top (y≈324) to PoE port center bottom (y≈99).
@@ -814,9 +823,9 @@
     <!-- the injector lives above on the U6 shelf — show with an arrow up -->
     <path d="M380 132 L 380 60 L 720 60 L 720 78" stroke="#2c8a4a" stroke-width="2.4" fill="none"/>
     <circle cx="720" cy="80" r="4" fill="#2c8a4a"/>
-    <text x="720" y="52" class="lbl-light" fill="#7be39a" text-anchor="middle">to U-POE-at (on U6 shelf)</text>
+    <text x="720" y="52" class="lbl-light" fill="#7be39a" text-anchor="middle">to U-POE-at (on U5 shelf)</text>
 
-    <!-- Cable 4: Patch 4 (G5 Bullet camera) → PoE 4, YELLOW -->
+    <!-- Cable 4: Patch 4 (G6 Bullet camera) → PoE 4, YELLOW -->
     <path d="M211 324 C 211 240, 358 230, 358 99" stroke="#e4b649" stroke-width="2.4" fill="none"/>
 
     <!-- Cable 5: Patch 5 (Office wall jack) → PoE 5, BLUE -->
@@ -849,15 +858,15 @@
     <text x="179" y="418" class="anno-muted" text-anchor="middle" fill="#7be39a" font-size="9">* via injector</text>
 
     <!-- Legend -->
-    <g transform="translate(720 396)">
-      <rect x="-10" y="-22" width="240" height="48" rx="4" fill="#0a0a0a" stroke="#3a3a3a"/>
+    <g transform="translate(700 396)">
+      <rect x="-12" y="-22" width="260" height="52" rx="4" fill="#0a0a0a" stroke="#5a5a5a"/>
       <text x="0" y="-8" class="lbl-light">Patch cable color key</text>
-      <line x1="0" y1="6" x2="20" y2="6" stroke="#3a78c8" stroke-width="3"/>
-      <text x="26" y="9" class="anno" fill="#cdcabe" font-size="10">data/PoE+ direct from UDM</text>
-      <line x1="0" y1="20" x2="20" y2="20" stroke="#e4b649" stroke-width="3"/>
-      <text x="26" y="23" class="anno" fill="#cdcabe" font-size="10">camera</text>
-      <line x1="130" y1="20" x2="150" y2="20" stroke="#2c8a4a" stroke-width="3"/>
-      <text x="156" y="23" class="anno" fill="#cdcabe" font-size="10">via U-POE-at</text>
+      <line x1="0" y1="6" x2="22" y2="6" stroke="#3a78c8" stroke-width="3"/>
+      <text x="28" y="10" class="lbl-light">data/PoE+ direct from UDM</text>
+      <line x1="0" y1="22" x2="22" y2="22" stroke="#e4b649" stroke-width="3"/>
+      <text x="28" y="26" class="lbl-light">camera</text>
+      <line x1="120" y1="22" x2="142" y2="22" stroke="#2c8a4a" stroke-width="3"/>
+      <text x="148" y="26" class="lbl-light">via U-POE-at injector</text>
     </g>
   </svg>
 </div>
@@ -871,39 +880,39 @@
   <tbody>
     <tr>
       <td class="u">U6</td>
-      <td><a href="https://www.walmart.com/ip/NavePoint-1U-Rack-Shelf-Server-Rack-Network-Cabinets-Cantilever-Rack-Mount-Shelf-10-Deep-White-Pre-Assembled-Compatible-19-Inch-Standard-Equipment/5072216630" target="_blank" rel="noopener">NavePoint 1U Vented Cantilever Shelf, 10" deep, white</a> <span class="qty">×1</span><br><span class="anno-muted">Holds the Sonic-supplied fiber ONT on top.</span></td>
-      <td>NavePoint · 1U 10"D</td>
-      <td>Cradle for the Sonic fiber ONT (modem). ONT is not rack-mountable on its own.</td>
+      <td>(empty) — ONT sits on the U5 shelf and physically occupies this row.</td>
+      <td>—</td>
+      <td>Don't fill. Top of the cabinet — leave open for ONT clearance and top vent airflow.</td>
     </tr>
     <tr>
       <td class="u">U5</td>
-      <td><a href="https://store.ui.com/us/en/pro/category/all-unifi-cloud-gateways/products/udm-se" target="_blank" rel="noopener">Ubiquiti UniFi Dream Machine Special Edition (UDM-SE)</a> <span class="qty">×1</span><br>+ <a href="https://www.amazon.com/s?k=WD+Purple+8TB+WD85PURZ" target="_blank" rel="noopener">WD Purple 8TB HDD (WD85PURZ)</a> installed in drive bay <span class="qty">×1</span></td>
-      <td>Ubiquiti · UDM-SE<br>Western Digital · WD85PURZ</td>
-      <td>Router, network controller, 8-port PoE+ switch, UniFi Protect NVR. WAN port connects to the ONT. HDD stores camera footage.</td>
+      <td><a href="https://www.walmart.com/ip/NavePoint-1U-Rack-Shelf-Server-Rack-Network-Cabinets-Cantilever-Rack-Mount-Shelf-10-Deep-White-Pre-Assembled-Compatible-19-Inch-Standard-Equipment/5072216630" target="_blank" rel="noopener">NavePoint 1U Vented Cantilever Shelf, 10" deep, white</a> <span class="qty">×1</span><br><span class="anno-muted">Holds the Sonic-supplied fiber ONT on top (ONT body sits in U6 space). U-POE-at injector also rides on this shelf.</span></td>
+      <td>NavePoint · 1U 10"D</td>
+      <td>Cradle for the Sonic fiber ONT and the U-POE-at injector for the 3rd AP.</td>
     </tr>
     <tr>
       <td class="u">U4</td>
-      <td>Blank — airflow gap, reserved for future <i>UniFi Pro 24 PoE</i> switch</td>
+      <td>Blank — airflow gap above UDM-SE, reserved for future <i>UniFi Pro 24 PoE</i> switch</td>
       <td>—</td>
-      <td>Don't fill. Leaves growth room without re-cabling.</td>
+      <td>Don't fill. Provides stack-effect cooling for the UDM-SE directly below; leaves growth room without re-cabling.</td>
     </tr>
     <tr>
       <td class="u">U3</td>
-      <td><a href="https://www.amazon.com/TRENDnet-24-Port-Keystone-Rackmount-TC-KP24/dp/B07M5QBL8G" target="_blank" rel="noopener">TRENDnet 24-Port Blank Keystone 1U Patch Panel (TC-KP24)</a> <span class="qty">×1</span></td>
-      <td>TRENDnet · TC-KP24</td>
-      <td>Terminates every CAT6 home run from APs, cameras, and wall jacks. Ray supplies the CAT6 keystones.</td>
+      <td><a href="https://store.ui.com/us/en/pro/category/all-unifi-cloud-gateways/products/udm-se" target="_blank" rel="noopener">Ubiquiti UniFi Dream Machine Special Edition (UDM-SE)</a> <span class="qty">×1</span><br>+ <a href="https://www.amazon.com/s?k=WD+Purple+8TB+WD85PURZ" target="_blank" rel="noopener">WD Purple 8TB HDD (WD85PURZ)</a> installed in drive bay <span class="qty">×1</span></td>
+      <td>Ubiquiti · UDM-SE<br>Western Digital · WD85PURZ</td>
+      <td>Router, network controller, 8-port PoE+ switch, UniFi Protect NVR. WAN port connects up to the ONT above; PoE ports connect down through U2 to the U1 patch panel.</td>
     </tr>
     <tr>
       <td class="u">U2</td>
-      <td>Horizontal cable management + 10' service loops</td>
-      <td>—</td>
-      <td>All slack lives here. Velcro only — no zip ties on CAT6.</td>
+      <td><a href="https://www.walmart.com/ip/CyberPower-CPS1215RMS-Rackmount-15A-PDU-Surge-12-x-NEMA-5-15R-1800VA-1U-19-Rack-mountable/13044293" target="_blank" rel="noopener">CyberPower CPS1215RMS 1U Rackmount Surge PDU</a>, 12 × NEMA 5-15R <span class="qty">×1</span></td>
+      <td>CyberPower · CPS1215RMS</td>
+      <td>Single plug into the dedicated 15A wall receptacle. All rack power lands here. Position between UDM-SE and patch panel keeps power physically separated from data.</td>
     </tr>
     <tr>
       <td class="u">U1</td>
-      <td><a href="https://www.walmart.com/ip/CyberPower-CPS1215RMS-Rackmount-15A-PDU-Surge-12-x-NEMA-5-15R-1800VA-1U-19-Rack-mountable/13044293" target="_blank" rel="noopener">CyberPower CPS1215RMS 1U Rackmount Surge PDU</a>, 12 × NEMA 5-15R <span class="qty">×1</span></td>
-      <td>CyberPower · CPS1215RMS</td>
-      <td>Single plug into the dedicated 20A wall receptacle. All rack power lands here.</td>
+      <td><a href="https://www.amazon.com/TRENDnet-24-Port-Keystone-Rackmount-TC-KP24/dp/B07M5QBL8G" target="_blank" rel="noopener">TRENDnet 24-Port Blank Keystone 1U Patch Panel (TC-KP24)</a> <span class="qty">×1</span></td>
+      <td>TRENDnet · TC-KP24</td>
+      <td>Bottom of rack, directly above the cabinet's bottom cable knockouts. Terminates every CAT6 home run from APs, cameras, and wall jacks. Ray supplies the CAT6 keystones.</td>
     </tr>
     <tr>
       <td class="u">Cab</td>
@@ -924,11 +933,11 @@
       <td><a href="https://store.ui.com/us/en/category/wifi-flagship/products/u7-pro-xg?variant=u7-pro-xg-us" target="_blank" rel="noopener">Ubiquiti U7 Pro XG</a> Wi-Fi 7 Access Point <span class="qty">×3</span></td>
       <td>Ubiquiti · U7-Pro-XG</td>
       <td>Ceiling-mounted: Living Room, Bedroom 1, Family Room. Each on its own CAT6 home run to the patch panel.</td>
-      <td>2 of 3: PoE+ direct from UDM-SE.<br>3rd: <a href="https://store.ui.com/us/en/pro/products/u-poe-at" target="_blank" rel="noopener">U-POE-at injector</a> (lives on the U6 shelf).</td>
+      <td>2 of 3: PoE+ direct from UDM-SE.<br>3rd: <a href="https://store.ui.com/us/en/pro/products/u-poe-at" target="_blank" rel="noopener">U-POE-at injector</a> (lives on the U5 shelf).</td>
     </tr>
     <tr>
-      <td><a href="https://store.ui.com/us/en/category/all-cameras-nvrs/products/uvc-g5-bullet" target="_blank" rel="noopener">Ubiquiti G5 Bullet</a> camera <span class="qty">×1</span> (more later)</td>
-      <td>Ubiquiti · UVC-G5-Bullet</td>
+      <td><a href="https://store.ui.com/us/en/products/uvc-g6-bullet" target="_blank" rel="noopener">Ubiquiti G6 Bullet</a> camera <span class="qty">×1</span> (more later)</td>
+      <td>Ubiquiti · UVC-G6-Bullet</td>
       <td>Exterior. CAT6 home run to the patch panel.</td>
       <td>PoE from UDM-SE.</td>
     </tr>
@@ -938,11 +947,11 @@
 <div class="callout">
   <h3>Wire-up flow — for Ivan</h3>
   <ol>
-    <li>Sonic fiber → <b>ONT</b> (sits on the U6 shelf). ONT Ethernet out → <b>UDM-SE WAN port</b>.</li>
-    <li>Each house CAT6 run → <b>punched down on U3 patch panel</b> keystone. Label every port (room + position).</li>
-    <li>Short patch cables (Ray supplies) from patch panel ports up to <b>UDM-SE PoE+ ports</b> for APs and cameras.</li>
-    <li>All AC: every device's power cord plugs into the <b>U1 PDU</b>. PDU plugs into the dedicated 15A wall receptacle.</li>
-    <li>3rd AP (longest run): patch panel port → <b>U-POE-at injector</b> data-in, injector data+power-out → that AP. Injector wall-wart plugs into the PDU.</li>
+    <li>Sonic fiber comes up through the dedicated bottom conduit → <b>ONT</b> (sits on the U5 shelf). ONT Ethernet out drops <b>2U down</b> to the <b>UDM-SE WAN port (U3)</b>.</li>
+    <li>Each house CAT6 home run enters the cabinet through the bottom knockouts and is <b>punched down on the U1 patch panel</b> keystone directly above. Label every port (room + position).</li>
+    <li>Short 1-ft patch cables (<b>from the UniFi order — no need to buy</b>) jump from <b>U1 patch panel ports up past the U2 PDU</b> to <b>UDM-SE PoE+ ports (U3)</b>. Route along the right rail with velcro so they skirt the PDU face cleanly.</li>
+    <li>All AC: every device's power cord plugs into the <b>U2 PDU</b>. PDU plugs into the dedicated 15A wall receptacle below the cabinet.</li>
+    <li>3rd AP (longest run): U1 patch panel port → <b>U-POE-at injector</b> (sitting on the U5 shelf) data-in, injector data+power-out → that AP. Injector wall-wart plugs into the U2 PDU.</li>
   </ol>
 </div>
 
