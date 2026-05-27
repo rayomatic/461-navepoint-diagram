@@ -610,16 +610,16 @@
         <rect x="526" y="207" width="38" height="20"/>
       </g>
       <text x="405" y="203" class="lbl-light" text-anchor="middle">8× 1G PoE+ (APs &amp; cameras)</text>
-      <!-- 2 SFP+ -->
-      <g fill="#163b56" stroke="#aaa">
+      <!-- 2 SFP+ (one is 10G WAN, one is 10G LAN — unused in our setup) -->
+      <g fill="#163b56" stroke="#888">
         <rect x="586" y="207" width="50" height="20"/>
         <rect x="640" y="207" width="50" height="20"/>
       </g>
-      <text x="638" y="203" class="lbl-light" text-anchor="middle">2× 10G SFP+</text>
-      <!-- WAN port -->
-      <rect x="708" y="207" width="48" height="20" fill="#3a1a1a" stroke="#aaa"/>
-      <text x="732" y="203" class="lbl-light" text-anchor="middle">WAN</text>
-      <text x="732" y="221" class="lbl-light" text-anchor="middle">RJ45</text>
+      <text x="638" y="203" class="lbl-light" text-anchor="middle">2× 10G SFP+ (unused)</text>
+      <!-- 2.5G WAN RJ-45 port — this is where Sonic ONT plugs in (Option B from QIG) -->
+      <rect x="708" y="207" width="56" height="20" fill="#1f4d3f" stroke="#7be39a" stroke-width="1.4"/>
+      <text x="736" y="203" class="lbl-light" text-anchor="middle" fill="#9be8b3">2.5G WAN</text>
+      <text x="736" y="221" class="lbl-light" text-anchor="middle">RJ-45 ← Sonic ONT</text>
       <!-- HDD bay -->
       <rect x="780" y="203" width="140" height="28" fill="#1a1a1a" stroke="#7a5a2a" stroke-dasharray="3 3"/>
       <text x="850" y="221" class="lbl-light" text-anchor="middle" fill="#e4b87a">WD PURPLE 8TB (in bay)</text>
@@ -926,9 +926,9 @@
     </tr>
     <tr>
       <td class="u">U1</td>
-      <td><a href="https://www.amazon.com/TRENDnet-24-Port-Keystone-Rackmount-TC-KP24/dp/B07M5QBL8G" target="_blank" rel="noopener">TRENDnet 24-Port Blank Keystone 1U Patch Panel (TC-KP24)</a> <span class="qty">×1</span></td>
-      <td>TRENDnet · TC-KP24</td>
-      <td>Bottom of rack, directly above the cabinet's bottom cable knockouts. Terminates every CAT6 home run from APs, cameras, and wall jacks. Ray supplies the CAT6 keystones.</td>
+      <td><a href="https://www.amazon.com/TRENDnet-24-Port-Keystone-Rackmount-TC-KP24/dp/B07M5QBL8G" target="_blank" rel="noopener">TRENDnet 24-Port Blank Keystone 1U Patch Panel (TC-KP24)</a> <span class="qty">×1</span><br>+ <a href="https://www.amazon.com/Cable-Matters-Listed-10-Pack-Keystone/dp/B00IO3HEN6" target="_blank" rel="noopener">Cable Matters Cat6 Keystone Jack — 10-Pack, White</a> <span class="qty">×1 pack</span></td>
+      <td>TRENDnet · TC-KP24<br>Cable Matters · B00IO3HEN6</td>
+      <td>Bottom of rack, directly above the cabinet's bottom cable slot. Each in-wall Cat6 run is punched down on the back of a keystone jack; the keystone snaps into the patch panel frame. 10 jacks covers 8 drops + 2 spares.</td>
     </tr>
     <tr>
       <td class="u">Cab</td>
