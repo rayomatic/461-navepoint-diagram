@@ -220,7 +220,7 @@
         </g>
       </g>
 
-      <!-- Dedicated 20A receptacle below cabinet (NEMA 5-20R duplex, vertical) -->
+      <!-- Dedicated 15A receptacle below cabinet (NEMA 5-15R duplex, vertical) -->
       <g>
         <!-- faceplate -->
         <rect x="216" y="442" width="40" height="74" rx="3" fill="#fff" stroke="#111" stroke-width="1.2"/>
@@ -228,13 +228,12 @@
         <circle cx="236" cy="479" r="1.3" fill="#888" stroke="#444" stroke-width="0.4"/>
         <line x1="234.4" y1="479" x2="237.6" y2="479" stroke="#222" stroke-width="0.5"/>
 
-        <!-- TOP outlet (NEMA 5-20R: T-slot neutral + vertical hot + D-ground) -->
+        <!-- TOP outlet (NEMA 5-15R: two parallel vertical slots + D-ground) -->
         <g>
-          <!-- neutral T-slot (left): vertical stem + horizontal cross at bottom -->
+          <!-- neutral slot (left, slightly taller) -->
           <rect x="227.8" y="450" width="2.4" height="10" fill="#111"/>
-          <rect x="225.4" y="458" width="7.2" height="2.2" fill="#111"/>
-          <!-- hot vertical slot (right) -->
-          <rect x="241.8" y="450.5" width="2.4" height="9.5" fill="#111"/>
+          <!-- hot slot (right, slightly shorter) -->
+          <rect x="241.8" y="450.5" width="2.4" height="9" fill="#111"/>
           <!-- D-shaped ground hole below -->
           <path d="M232 466 a3 3 0 1 0 6 0 v-1 h-6 z" fill="#111"/>
         </g>
@@ -242,13 +241,12 @@
         <!-- BOTTOM outlet -->
         <g>
           <rect x="227.8" y="486" width="2.4" height="10" fill="#111"/>
-          <rect x="225.4" y="494" width="7.2" height="2.2" fill="#111"/>
-          <rect x="241.8" y="486.5" width="2.4" height="9.5" fill="#111"/>
+          <rect x="241.8" y="486.5" width="2.4" height="9" fill="#111"/>
           <path d="M232 502 a3 3 0 1 0 6 0 v-1 h-6 z" fill="#111"/>
         </g>
 
-        <text x="236" y="532" class="anno" text-anchor="middle">DEDICATED 20A</text>
-        <text x="236" y="544" class="anno-muted" text-anchor="middle">duplex, single circuit</text>
+        <text x="236" y="532" class="anno" text-anchor="middle">DEDICATED 15A</text>
+        <text x="236" y="544" class="anno-muted" text-anchor="middle">NEMA 5-15R, single circuit</text>
       </g>
 
       <!-- LV stub-up -->
@@ -301,7 +299,7 @@
     <div class="callout">
       <h3>What Ivan owns (electrical)</h3>
       <ul class="notes">
-        <li><b>Dedicated 20A circuit</b> for the rack — single duplex receptacle directly under the cabinet, not shared with any other garage outlets.</li>
+        <li><b>Dedicated 15A circuit</b> for the rack — single NEMA 5-15R duplex receptacle directly under the cabinet, not shared with any other garage outlets. (Rack worst-case draw is ~1.5A — 15A is plenty; CyberPower PDU has a 5-15P plug, so 5-15R is the matching receptacle. Reason for "dedicated": no nuisance trips from shop tools / garage door opener sharing the circuit.)</li>
         <li><b>LV stub-up:</b> 1× 1.5" ENT (smurf tube) from this location to the attic, for all house CAT6 home runs to land at the patch panel.</li>
         <li><b>Sonic fiber entry:</b> separate 3/4" conduit from the exterior demarc to the bottom of the cabinet for the ONT fiber jumper.</li>
         <li><b>Bonding:</b> #6 ground from the cabinet ground lug (back of cabinet, see next diagram) to nearest panel ground.</li>
@@ -943,7 +941,7 @@
     <li>Sonic fiber → <b>ONT</b> (sits on the U6 shelf). ONT Ethernet out → <b>UDM-SE WAN port</b>.</li>
     <li>Each house CAT6 run → <b>punched down on U3 patch panel</b> keystone. Label every port (room + position).</li>
     <li>Short patch cables (Ray supplies) from patch panel ports up to <b>UDM-SE PoE+ ports</b> for APs and cameras.</li>
-    <li>All AC: every device's power cord plugs into the <b>U1 PDU</b>. PDU plugs into the dedicated 20A wall receptacle.</li>
+    <li>All AC: every device's power cord plugs into the <b>U1 PDU</b>. PDU plugs into the dedicated 15A wall receptacle.</li>
     <li>3rd AP (longest run): patch panel port → <b>U-POE-at injector</b> data-in, injector data+power-out → that AP. Injector wall-wart plugs into the PDU.</li>
   </ol>
 </div>
