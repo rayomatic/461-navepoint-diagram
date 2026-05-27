@@ -928,7 +928,7 @@
       <td class="u">U1</td>
       <td><a href="https://www.amazon.com/TRENDnet-24-Port-Keystone-Rackmount-TC-KP24/dp/B07M5QBL8G" target="_blank" rel="noopener">TRENDnet 24-Port Blank Keystone 1U Patch Panel (TC-KP24)</a> <span class="qty">×1</span><br>+ <a href="https://www.amazon.com/Cable-Matters-Listed-10-Pack-Keystone/dp/B00IO3HEN6" target="_blank" rel="noopener">Cable Matters Cat6 Keystone Jack — 10-Pack, White</a> <span class="qty">×1 pack</span></td>
       <td>TRENDnet · TC-KP24<br>Cable Matters · B00IO3HEN6</td>
-      <td>Bottom of rack, directly above the cabinet's bottom cable slot. Each in-wall Cat6 run is punched down on the back of a keystone jack; the keystone snaps into the patch panel frame. 10 jacks covers 8 drops + 2 spares.</td>
+      <td>Bottom of rack, directly above the cabinet's bottom cable slot. Each in-wall Cat6 run is punched down on a keystone, which snaps into the patch panel frame. <b>Install only as many keystones as you have cables for</b> (8 here); leave the other 16 cutouts empty. <b>Label every populated slot</b> on the panel face with the destination (e.g. <code>LR-AP</code>, <code>G5-CAM</code>, <code>OFFICE</code>) — empty/unlabeled = no cable. Keep the 2 leftover keystones from the 10-pack as field spares.</td>
     </tr>
     <tr>
       <td class="u">Cab</td>
@@ -964,7 +964,7 @@
   <h3>Wire-up flow — for Ivan</h3>
   <ol>
     <li>Sonic fiber comes up through the dedicated bottom conduit → <b>ONT</b> (sits on the U5 shelf). ONT Ethernet out drops <b>2U down</b> to the <b>UDM-SE WAN port (U3)</b>.</li>
-    <li>Each house CAT6 home run enters the cabinet through the bottom knockouts and is <b>punched down on the U1 patch panel</b> keystone directly above. Label every port (room + position).</li>
+    <li>Each house CAT6 home run enters the cabinet through the bottom cable slot and is <b>punched down on a Cable Matters keystone</b>, which snaps into the U1 patch panel cutout directly above. <b>Install keystones only in slots that have a cable behind them</b> (8 of 24). Label each populated slot with the destination (room + device); leave unused cutouts empty and unlabeled.</li>
     <li>Short 1-ft patch cables (<b>from the UniFi order — no need to buy</b>) jump from <b>U1 patch panel ports up past the U2 PDU</b> to <b>UDM-SE PoE+ ports (U3)</b>. Route along the right rail with velcro so they skirt the PDU face cleanly.</li>
     <li>All AC: every device's power cord plugs into the <b>U2 PDU</b>. PDU plugs into the dedicated 15A wall receptacle below the cabinet.</li>
     <li>3rd AP (longest run): U1 patch panel port → <b>U-POE-at injector</b> (sitting on the U5 shelf) data-in, injector data+power-out → that AP. Injector wall-wart plugs into the U2 PDU.</li>
