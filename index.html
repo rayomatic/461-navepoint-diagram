@@ -910,7 +910,7 @@
       <td class="u">U4</td>
       <td>Blank — airflow gap above UDM-SE, reserved for future <i>UniFi Pro 24 PoE</i> switch</td>
       <td>—</td>
-      <td>Don't fill. Provides stack-effect cooling for the UDM-SE directly below; leaves growth room without re-cabling.</td>
+      <td>Don't fill. Provides stack-effect cooling for the UDM-SE directly below. <b>Port-count note:</b> 12 home runs vs. 8 UDM-SE ports — 3 APs + 1 G6 camera use 4 PoE+ ports; 4 of the 8 wall jacks can be patched in at once, the other 4 stay terminated at the panel but unpatched. Day you want all 8 wall jacks simultaneously live → drop a switch in this U.</td>
     </tr>
     <tr>
       <td class="u">U3</td>
@@ -926,9 +926,9 @@
     </tr>
     <tr>
       <td class="u">U1</td>
-      <td><a href="https://www.amazon.com/TRENDnet-24-Port-Keystone-Rackmount-TC-KP24/dp/B07M5QBL8G" target="_blank" rel="noopener">TRENDnet 24-Port Blank Keystone 1U Patch Panel (TC-KP24)</a> <span class="qty">×1</span><br>+ <a href="https://www.amazon.com/Cable-Matters-Listed-10-Pack-Keystone/dp/B00IO3HEN6" target="_blank" rel="noopener">Cable Matters Cat6 Keystone Jack — 10-Pack, White</a> <span class="qty">×1 pack</span></td>
-      <td>TRENDnet · TC-KP24<br>Cable Matters · B00IO3HEN6</td>
-      <td>Bottom of rack, directly above the cabinet's bottom cable slot. Each in-wall Cat6 run is punched down on a keystone, which snaps into the patch panel frame. <b>Install only as many keystones as you have cables for</b> (8 here); leave the other 16 cutouts empty. <b>Label every populated slot</b> on the panel face with the destination (e.g. <code>LR-AP</code>, <code>G5-CAM</code>, <code>OFFICE</code>) — empty/unlabeled = no cable. Keep the 2 leftover keystones from the 10-pack as field spares.</td>
+      <td><a href="https://www.amazon.com/TRENDnet-24-Port-Keystone-Rackmount-TC-KP24/dp/B07M5QBL8G" target="_blank" rel="noopener">TRENDnet 24-Port Blank Keystone 1U Patch Panel (TC-KP24)</a> <span class="qty">×1</span><br>+ <a href="https://www.amazon.com/dp/B07L8C3F6C" target="_blank" rel="noopener">VCE Cat6 Keystone Jack — 25-Pack, White (90° punch-down)</a> <span class="qty">×1 pack</span></td>
+      <td>TRENDnet · TC-KP24<br>VCE · B07L8C3F6C</td>
+      <td>Bottom of rack, directly above the cabinet's bottom cable slot. <b>12 keystones populated</b> (8 wall jacks per BOM row 27 + 3 APs + 1 G6 cam); other 12 cutouts left empty. <b>Label every populated slot</b> with the destination (e.g. <code>OFFICE-1</code>, <code>LR-AP</code>, <code>G6-CAM</code>) — empty/unlabeled = no cable. Keep the 13 leftover keystones as field spares for future drops.</td>
     </tr>
     <tr>
       <td class="u">Cab</td>
