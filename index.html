@@ -198,18 +198,21 @@
         <text x="290" y="368" class="lbl-light" text-anchor="middle">PDU (12 OUTLETS)</text>
         <text x="290" y="397" class="lbl-light" text-anchor="middle">PATCH PANEL</text>
 
-        <!-- 4 cabinet-to-plywood mount screws (front-visible heads) -->
-        <g fill="#111">
-          <circle cx="188" cy="228" r="2.4"/>
-          <circle cx="372" cy="228" r="2.4"/>
-          <circle cx="188" cy="412" r="2.4"/>
-          <circle cx="372" cy="412" r="2.4"/>
-        </g>
-        <!-- mount screw callout -->
+        <!-- Hanger bar behind the cabinet (visible above the cabinet top edge for clarity) -->
         <g>
-          <path d="M188 228 L 130 200" class="lead"/>
-          <text x="124" y="196" class="anno" text-anchor="end">cabinet mounts</text>
-          <text x="124" y="208" class="anno-muted" text-anchor="end">into plywood (4 pts)</text>
+          <rect x="190" y="206" width="180" height="8" rx="1" fill="#9a9486" stroke="#111" stroke-width="0.8"/>
+          <g fill="#1a1a1a">
+            <circle cx="200" cy="210" r="1.6"/>
+            <circle cx="248" cy="210" r="1.6"/>
+            <circle cx="312" cy="210" r="1.6"/>
+            <circle cx="360" cy="210" r="1.6"/>
+          </g>
+        </g>
+        <!-- hanger bar callout -->
+        <g>
+          <path d="M190 210 L 130 196" class="lead"/>
+          <text x="124" y="192" class="anno" text-anchor="end">Hanger bar</text>
+          <text x="124" y="204" class="anno-muted" text-anchor="end">anchored to plywood; cabinet hangs on it</text>
         </g>
         <!-- cabinet outline callout -->
         <g>
@@ -288,7 +291,7 @@
         <text x="500" y="616" class="dim" text-anchor="end">12" AFF</text>
       </g>
     </svg>
-    <div class="legend"><b>Plywood:</b> 48" × 48" × 3/4" AC fir, sealed and painted. Lagged to studs at 8 points (2 lags per stud).<br><b>Cabinet:</b> centered on plywood. Bottom of cabinet at 48" AFF. Glass door swings left (hinge on left side).</div>
+    <div class="legend"><b>Plywood:</b> 48" × 48" × 3/4" AC fir, sealed and painted. Lagged to studs at 8 points (2 lags per stud).<br><b>Cabinet:</b> hung on the NavePoint hanger bar (ships with the cabinet). Bar anchored to plywood with 4 screws; cabinet drops onto the bar's 2 hooks and is locked with 2 M4 screws (per <a href="https://navepoint.com/content/manuals/navepoint-white%20performance-series-cabinet-manual.pdf" target="_blank" rel="noopener">manual</a>). Bottom of cabinet at 48" AFF. Glass door swings left.</div>
   </div>
 
   <div>
@@ -321,127 +324,132 @@
 <div class="two">
   <div class="stage">
     <h3>Rear view — mounting screws into plywood</h3>
-    <svg viewBox="0 0 700 480" xmlns="http://www.w3.org/2000/svg" aria-label="Rear view of NavePoint cabinet showing mounting screws into plywood">
-      <!-- plywood as background -->
-      <rect x="20" y="20" width="580" height="440" fill="#d6a85a" stroke="#7a5e26" stroke-width="2"/>
+    <svg viewBox="0 0 760 500" xmlns="http://www.w3.org/2000/svg" aria-label="Rear view showing NavePoint hanger-bar mounting system per the Performance Series manual">
+      <!-- plywood background -->
+      <rect x="20" y="20" width="640" height="460" fill="#d6a85a" stroke="#7a5e26" stroke-width="2"/>
       <g stroke="#a8802f" stroke-width="0.8" opacity="0.55" fill="none">
-        <path d="M22 70 Q310 60 598 72"/>
-        <path d="M22 130 Q310 138 598 128"/>
-        <path d="M22 190 Q310 182 598 192"/>
-        <path d="M22 250 Q310 258 598 248"/>
-        <path d="M22 310 Q310 302 598 312"/>
-        <path d="M22 370 Q310 378 598 368"/>
-        <path d="M22 420 Q310 412 598 422"/>
+        <path d="M22 70 Q340 60 658 72"/>
+        <path d="M22 130 Q340 138 658 128"/>
+        <path d="M22 190 Q340 182 658 192"/>
+        <path d="M22 250 Q340 258 658 248"/>
+        <path d="M22 310 Q340 302 658 312"/>
+        <path d="M22 370 Q340 378 658 368"/>
+        <path d="M22 430 Q340 422 658 432"/>
       </g>
 
-      <!-- Cabinet rear plate (white powder-coated steel) -->
-      <g>
-        <rect x="120" y="80" width="380" height="320" rx="6" fill="#f0ede5" stroke="#111" stroke-width="2"/>
-        <!-- subtle inner panel inset -->
-        <rect x="134" y="94" width="352" height="292" rx="3" fill="none" stroke="#9a9486" stroke-width="0.7"/>
-
-        <!-- 4 corner mounting holes / lag heads through cabinet into plywood -->
-        <g>
-          <!-- top-left -->
-          <g>
-            <circle cx="150" cy="110" r="9"  fill="#fff" stroke="#111" stroke-width="1.4"/>
-            <circle cx="150" cy="110" r="4.5" fill="#3a3a3a"/>
-            <path d="M148 108 L 152 112 M 152 108 L 148 112" stroke="#fff" stroke-width="1"/>
-          </g>
-          <!-- top-right -->
-          <g>
-            <circle cx="470" cy="110" r="9"  fill="#fff" stroke="#111" stroke-width="1.4"/>
-            <circle cx="470" cy="110" r="4.5" fill="#3a3a3a"/>
-            <path d="M468 108 L 472 112 M 472 108 L 468 112" stroke="#fff" stroke-width="1"/>
-          </g>
-          <!-- bottom-left -->
-          <g>
-            <circle cx="150" cy="370" r="9"  fill="#fff" stroke="#111" stroke-width="1.4"/>
-            <circle cx="150" cy="370" r="4.5" fill="#3a3a3a"/>
-            <path d="M148 368 L 152 372 M 152 368 L 148 372" stroke="#fff" stroke-width="1"/>
-          </g>
-          <!-- bottom-right -->
-          <g>
-            <circle cx="470" cy="370" r="9"  fill="#fff" stroke="#111" stroke-width="1.4"/>
-            <circle cx="470" cy="370" r="4.5" fill="#3a3a3a"/>
-            <path d="M468 368 L 472 372 M 472 368 L 468 372" stroke="#fff" stroke-width="1"/>
-          </g>
-        </g>
-
-        <!-- center keyhole slot (NavePoint also has keyhole hangers) -->
-        <g>
-          <rect x="295" y="118" width="30" height="10" rx="2" fill="#cfcabb" stroke="#111" stroke-width="1"/>
-          <circle cx="310" cy="123" r="3" fill="#fff" stroke="#111" stroke-width="1"/>
-          <text x="310" y="146" class="anno-muted" text-anchor="middle">keyhole hanger</text>
-        </g>
-
-        <!-- rear vent grid (top) -->
-        <g stroke="#9a9486" stroke-width="0.7">
-          <line x1="200" y1="170" x2="420" y2="170"/>
-          <line x1="200" y1="175" x2="420" y2="175"/>
-          <line x1="200" y1="180" x2="420" y2="180"/>
-          <line x1="200" y1="185" x2="420" y2="185"/>
-        </g>
-        <text x="310" y="200" class="anno-muted" text-anchor="middle">vent slots</text>
-
-        <!-- rear cable knockouts -->
-        <g>
-          <!-- bottom row of 3 knockouts -->
-          <circle cx="220" cy="340" r="14" fill="#fff" stroke="#111" stroke-width="1.2"/>
-          <circle cx="220" cy="340" r="10" fill="none" stroke="#888" stroke-dasharray="2 2"/>
-          <circle cx="310" cy="340" r="14" fill="#fff" stroke="#111" stroke-width="1.2"/>
-          <circle cx="310" cy="340" r="10" fill="none" stroke="#888" stroke-dasharray="2 2"/>
-          <circle cx="400" cy="340" r="14" fill="#fff" stroke="#111" stroke-width="1.2"/>
-          <circle cx="400" cy="340" r="10" fill="none" stroke="#888" stroke-dasharray="2 2"/>
-          <text x="310" y="370" class="anno-muted" text-anchor="middle">cable knockouts (pop out for fiber + LV bundle)</text>
-        </g>
-
-        <!-- ground lug -->
-        <g>
-          <rect x="425" y="248" width="44" height="20" rx="2" fill="#c9c2a9" stroke="#111"/>
-          <circle cx="447" cy="258" r="4" fill="#caa645" stroke="#7a5e10"/>
-          <path d="M469 258 L 525 258" class="lead"/>
-          <text x="532" y="254" class="anno">GROUND LUG</text>
-          <text x="532" y="266" class="anno-muted">#6 to panel ground</text>
-        </g>
-      </g>
-
-      <!-- Plywood lag-bolt heads (visible on the plywood, outside the cabinet) -->
-      <!-- shown to indicate plywood-to-stud lags -->
+      <!-- Plywood-to-stud lag heads (8 around the edges) -->
       <g fill="#111">
-        <circle cx="60"  cy="60"  r="3.4"/>
-        <circle cx="560" cy="60"  r="3.4"/>
-        <circle cx="60"  cy="420" r="3.4"/>
-        <circle cx="560" cy="420" r="3.4"/>
+        <circle cx="60"  cy="50"  r="3.6"/>
+        <circle cx="340" cy="50"  r="3.6"/>
+        <circle cx="620" cy="50"  r="3.6"/>
+        <circle cx="60"  cy="450" r="3.6"/>
+        <circle cx="340" cy="450" r="3.6"/>
+        <circle cx="620" cy="450" r="3.6"/>
       </g>
       <g>
-        <path d="M60 60 L 30 30" class="lead"/>
-        <text x="26" y="26" class="anno" text-anchor="end">5/16" × 3" lag</text>
-        <text x="26" y="38" class="anno-muted" text-anchor="end">plywood → stud</text>
+        <path d="M60 50 L 30 28" class="lead"/>
+        <text x="26" y="24" class="anno" text-anchor="end">5/16" × 3" lag</text>
+        <text x="26" y="36" class="anno-muted" text-anchor="end">plywood → stud (×8)</text>
       </g>
 
-      <!-- Annotation: 4 cabinet screws -->
+      <!-- HANGER BAR mounted to plywood (per manual, part #9) -->
+      <!-- horizontal strip across upper area, with 4 anchor screws and 2 outward-facing hooks -->
       <g>
-        <path d="M150 110 L 70 110" class="lead"/>
-        <text x="64" y="106" class="anno" text-anchor="end">#10 × 1-1/4" pan-head</text>
-        <text x="64" y="118" class="anno-muted" text-anchor="end">cabinet → plywood (×4)</text>
+        <rect x="160" y="110" width="380" height="22" rx="2" fill="#9a9486" stroke="#111" stroke-width="1.4"/>
+        <!-- 4 anchor screws through hanger bar into plywood -->
+        <g fill="#1a1a1a">
+          <circle cx="190" cy="121" r="3.2"/>
+          <circle cx="298" cy="121" r="3.2"/>
+          <circle cx="402" cy="121" r="3.2"/>
+          <circle cx="510" cy="121" r="3.2"/>
+        </g>
+        <!-- 2 outward-facing hooks (raised tabs pointing UP-and-out) -->
+        <g fill="#7a7468" stroke="#111" stroke-width="1">
+          <path d="M232 110 L 250 110 L 250 96 L 242 96 L 242 102 L 232 102 Z"/>
+          <path d="M450 110 L 468 110 L 468 96 L 460 96 L 460 102 L 450 102 Z"/>
+        </g>
+        <!-- callout to hanger bar -->
+        <g>
+          <path d="M160 121 L 80 90" class="lead"/>
+          <text x="76" y="84" class="anno" text-anchor="end">Hanger Bar (manual #9)</text>
+          <text x="76" y="96" class="anno-muted" text-anchor="end">4 wall anchors · 2 outward hooks</text>
+        </g>
       </g>
+
+      <!-- Cabinet rear plate, hung on the hooks (notches drop down over the hooks) -->
       <g>
-        <path d="M470 110 L 560 110" class="lead"/>
-        <text x="566" y="106" class="anno">pre-drill 1/8"</text>
-        <text x="566" y="118" class="anno-muted">no need for studs</text>
+        <rect x="140" y="100" width="420" height="320" rx="4" fill="#f0ede5" stroke="#111" stroke-width="2"/>
+        <rect x="154" y="114" width="392" height="292" rx="3" fill="none" stroke="#9a9486" stroke-width="0.7"/>
+
+        <!-- 2 mounting NOTCHES on the cabinet rear (over the hanger hooks) -->
+        <g stroke="#111" stroke-width="1.2" fill="#e0dcd0">
+          <path d="M226 100 L 226 116 L 256 116 L 256 100 Z"/>
+          <path d="M444 100 L 444 116 L 474 116 L 474 100 Z"/>
+        </g>
+        <!-- 2 M4 lock screws (per manual Step at p.9) — secure cabinet to hanger bar -->
+        <g fill="#1a1a1a">
+          <circle cx="241" cy="124" r="3"/>
+          <circle cx="459" cy="124" r="3"/>
+        </g>
+        <g>
+          <path d="M241 124 L 165 60" class="lead"/>
+          <text x="160" y="55" class="anno" text-anchor="end">M4 lock screw (×2)</text>
+          <text x="160" y="67" class="anno-muted" text-anchor="end">cabinet rear → hanger bar</text>
+        </g>
+        <g>
+          <path d="M444 110 L 600 80" class="lead"/>
+          <text x="606" y="76" class="anno">cabinet mounting notch</text>
+          <text x="606" y="88" class="anno-muted">hooks over the hanger bar (×2)</text>
+        </g>
+
+        <!-- TOP cable management slot (with removable cover) -->
+        <g>
+          <rect x="220" y="148" width="240" height="20" rx="2" fill="#cfcabb" stroke="#111" stroke-width="1"/>
+          <text x="340" y="162" class="anno-muted" text-anchor="middle">cable management slot (cover removable)</text>
+          <path d="M460 158 L 600 158" class="lead"/>
+          <text x="606" y="154" class="anno">TOP cable slot</text>
+          <text x="606" y="166" class="anno-muted">cover off = cable entry</text>
+        </g>
+
+        <!-- BOTTOM cable management slot -->
+        <g>
+          <rect x="220" y="362" width="240" height="20" rx="2" fill="#cfcabb" stroke="#111" stroke-width="1"/>
+          <text x="340" y="376" class="anno-muted" text-anchor="middle">cable management slot (cover removable)</text>
+          <path d="M460 372 L 600 372" class="lead"/>
+          <text x="606" y="368" class="anno">BOTTOM cable slot</text>
+          <text x="606" y="380" class="anno-muted">primary entry for our install</text>
+        </g>
+
+        <!-- rear vent stripe -->
+        <g stroke="#9a9486" stroke-width="0.7">
+          <line x1="220" y1="220" x2="460" y2="220"/>
+          <line x1="220" y1="226" x2="460" y2="226"/>
+          <line x1="220" y1="232" x2="460" y2="232"/>
+        </g>
+        <text x="340" y="248" class="anno-muted" text-anchor="middle">back panel (attaches to frame with 6 M4 screws)</text>
+
+        <!-- Ground lug (manual ships a Ground Wire Kit, Bag J) -->
+        <g>
+          <rect x="478" y="288" width="50" height="22" rx="2" fill="#c9c2a9" stroke="#111"/>
+          <circle cx="503" cy="299" r="4" fill="#caa645" stroke="#7a5e10"/>
+          <path d="M528 299 L 600 299" class="lead"/>
+          <text x="606" y="295" class="anno">GROUND LUG</text>
+          <text x="606" y="307" class="anno-muted">manual Bag J — #6 to panel ground</text>
+        </g>
       </g>
 
       <!-- legend strip -->
-      <g transform="translate(28 440)">
-        <circle cx="0" cy="0" r="5" fill="#fff" stroke="#111" stroke-width="1.2"/>
-        <circle cx="0" cy="0" r="2.5" fill="#3a3a3a"/>
-        <text x="10" y="4" class="anno-muted">= cabinet screw (into plywood)</text>
-        <circle cx="220" cy="0" r="3.4" fill="#111"/>
-        <text x="230" y="4" class="anno-muted">= lag bolt (plywood into stud)</text>
+      <g transform="translate(28 478)">
+        <circle cx="0" cy="0" r="3.4" fill="#111"/>
+        <text x="10" y="4" class="anno-muted">= lag bolt (plywood → stud)</text>
+        <circle cx="200" cy="0" r="3.2" fill="#1a1a1a"/>
+        <rect x="196" y="-3" width="8" height="6" fill="none" stroke="#111"/>
+        <text x="212" y="4" class="anno-muted">= wall anchor (hanger bar → plywood)</text>
+        <rect x="430" y="-4" width="16" height="8" fill="#9a9486" stroke="#111"/>
+        <text x="450" y="4" class="anno-muted">= NavePoint hanger bar (ships with cabinet)</text>
       </g>
     </svg>
-    <div class="legend"><b>4 screws hold the cabinet to the plywood</b> — corners of the rear plate. Plus the keyhole hanger at top-center for initial hang. <b>8 lag bolts</b> hold the plywood to the studs. All cabinet screws land in plywood — they do not need to hit studs.</div>
+    <div class="legend"><b>NavePoint Performance Series uses a hanger-bar mount</b> (per the cabinet's <a href="https://navepoint.com/content/manuals/navepoint-white%20performance-series-cabinet-manual.pdf" target="_blank" rel="noopener">owner's manual</a>): the supplied hanger bar (part #9) is anchored to the wall first with <b>4 screws</b>; the cabinet then drops onto two outward-facing hooks via two notches on its rear and is locked in place with <b>2 M4 screws</b>. We anchor the hanger bar to the plywood, and the plywood to the studs with 8 lags. No cabinet screws land in studs directly — the hanger bar carries the load.</div>
   </div>
 
   <div class="stage">
@@ -494,12 +502,20 @@
         <text x="24" y="186" class="anno" text-anchor="end">lag bolt</text>
       </g>
 
-      <!-- cabinet mount screw plywood→cabinet rear -->
+      <!-- Hanger bar in cross-section: sits between plywood face and cabinet rear -->
       <g>
-        <rect x="148" y="240" width="58" height="4" fill="#3a3a3a"/>
-        <path d="M148 242 L 80 280" class="lead"/>
-        <text x="76" y="284" class="anno" text-anchor="end">pan-head screw</text>
-        <text x="76" y="296" class="anno-muted" text-anchor="end">plywood ↔ cabinet</text>
+        <!-- bar profile -->
+        <rect x="156" y="218" width="8" height="44" fill="#9a9486" stroke="#111" stroke-width="0.6"/>
+        <!-- hook profile extending toward cabinet rear -->
+        <path d="M164 230 L 178 230 L 178 222 L 174 222 L 174 226 L 164 226 Z" fill="#7a7468" stroke="#111" stroke-width="0.6"/>
+        <!-- cabinet notch dropping over the hook -->
+        <rect x="178" y="226" width="22" height="8" fill="#e0dcd0" stroke="#111" stroke-width="0.6"/>
+        <!-- anchor screw plywood ↔ bar -->
+        <rect x="156" y="248" width="-12" height="3" fill="#3a3a3a"/>
+        <rect x="148" y="250" width="14" height="3" fill="#3a3a3a"/>
+        <path d="M156 252 L 80 290" class="lead"/>
+        <text x="76" y="294" class="anno" text-anchor="end">hanger bar (#9)</text>
+        <text x="76" y="306" class="anno-muted" text-anchor="end">anchored to plywood; cabinet hooks over it</text>
       </g>
 
       <!-- depth dimension -->
@@ -898,7 +914,7 @@
     </tr>
     <tr>
       <td class="u">U3</td>
-      <td><a href="https://store.ui.com/us/en/pro/category/all-unifi-cloud-gateways/products/udm-se" target="_blank" rel="noopener">Ubiquiti UniFi Dream Machine Special Edition (UDM-SE)</a> <span class="qty">×1</span><br>+ <a href="https://www.amazon.com/s?k=WD+Purple+8TB+WD85PURZ" target="_blank" rel="noopener">WD Purple 8TB HDD (WD85PURZ)</a> installed in drive bay <span class="qty">×1</span></td>
+      <td><a href="https://store.ui.com/us/en/pro/category/all-unifi-cloud-gateways/products/udm-se" target="_blank" rel="noopener">Ubiquiti UniFi Dream Machine Special Edition (UDM-SE)</a> <span class="qty">×1</span> · <a href="https://dl.ui.com/qig/udm-se/#index" target="_blank" rel="noopener">install guide</a><br>+ <a href="https://www.amazon.com/s?k=WD+Purple+8TB+WD85PURZ" target="_blank" rel="noopener">WD Purple 8TB HDD (WD85PURZ)</a> installed in drive bay <span class="qty">×1</span></td>
       <td>Ubiquiti · UDM-SE<br>Western Digital · WD85PURZ</td>
       <td>Router, network controller, 8-port PoE+ switch, UniFi Protect NVR. WAN port connects up to the ONT above; PoE ports connect down through U2 to the U1 patch panel.</td>
     </tr>
