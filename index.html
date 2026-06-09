@@ -48,6 +48,8 @@
   td .qty{display:inline-block;background:#efe7c8;border:1px solid #c9bd86;color:#3a3010;font-size:11px;padding:1px 6px;border-radius:99px;margin-left:6px;font-variant-numeric:tabular-nums;font-weight:600}
   td .arrived{display:inline-block;background:#dff0e0;border:1px solid #6fa771;color:#234d2a;font-size:11px;padding:1px 8px;border-radius:99px;margin-left:6px;font-weight:600;white-space:nowrap}
   td .arrived::before{content:"✓ "}
+  td.thumb{padding:8px;text-align:center;vertical-align:middle}
+  td.thumb img{display:block;max-width:80px;max-height:80px;width:auto;height:auto;margin:0 auto;border-radius:4px;background:#fff;border:1px solid var(--rule);object-fit:contain}
   td a{font-weight:600}
   ul.notes{margin:8px 0 0;padding-left:20px}
   ul.notes li{margin:4px 0}
@@ -616,17 +618,16 @@
         <rect x="502" y="286" width="36" height="22"/>
       </g>
 
-      <!-- 2 SFP+ ports -->
-      <text x="572" y="280" class="lbl-light" text-anchor="middle">2× SFP+</text>
+      <!-- 2 SFP+ ports (label only in bottom descriptor since they're unused) -->
       <g fill="#163b56" stroke="#888">
         <rect x="550" y="286" width="20" height="22"/>
         <rect x="574" y="286" width="20" height="22"/>
       </g>
 
       <!-- 2.5G WAN RJ-45 (Sonic input) -->
-      <text x="630" y="280" class="lbl-light" text-anchor="middle" fill="#9be8b3">WAN ← Sonic</text>
+      <text x="630" y="280" class="lbl-light" text-anchor="middle" fill="#9be8b3">2.5G WAN ← Sonic</text>
       <rect x="602" y="286" width="56" height="22" fill="#1f4d3f" stroke="#7be39a" stroke-width="1.4"/>
-      <text x="630" y="301" class="lbl-light" text-anchor="middle" fill="#9be8b3">2.5G RJ-45</text>
+      <text x="630" y="301" class="lbl-light" text-anchor="middle" fill="#9be8b3">RJ-45</text>
 
       <!-- HDD bay -->
       <text x="775" y="280" class="lbl-light" text-anchor="middle" fill="#e4b87a">WD PURPLE 8TB</text>
@@ -901,48 +902,55 @@
 <h2>Equipment list — what fills the rack</h2>
 <table>
   <thead>
-    <tr><th style="width:6%">U</th><th>Item</th><th style="width:22%">Mfr / Model</th><th>Role</th></tr>
+    <tr><th style="width:5%">U</th><th style="width:11%">Photo</th><th>Item</th><th style="width:18%">Mfr / Model</th><th>Role</th></tr>
   </thead>
   <tbody>
     <tr>
       <td class="u">U6</td>
+      <td class="thumb">—</td>
       <td>(empty) — ONT sits on the U5 shelf and physically occupies this row.</td>
       <td>—</td>
       <td>Don't fill. Top of the cabinet — leave open for ONT clearance and top vent airflow.</td>
     </tr>
     <tr>
       <td class="u">U5</td>
-      <td><a href="https://www.walmart.com/ip/NavePoint-1U-Rack-Shelf-Server-Rack-Network-Cabinets-Cantilever-Rack-Mount-Shelf-10-Deep-White-Pre-Assembled-Compatible-19-Inch-Standard-Equipment/5072216630" target="_blank" rel="noopener">NavePoint 1U Vented Cantilever Shelf, 10" deep, white</a> <span class="qty">×1</span><br><span class="anno-muted">Holds the Sonic-supplied fiber ONT on top (ONT body sits in U6 space). U-POE-at injector also rides on this shelf.</span></td>
+      <td class="thumb"><img src="https://i5.walmartimages.com/seo/NavePoint-1U-Rack-Shelf-Server-Rack-Network-Cabinets-Cantilever-Rack-Mount-Shelf-10-Deep-White-Pre-Assembled-Compatible-19-Inch-Standard-Equipment_88b5b04c-1085-4b86-b576-8ed2e4be3bf8.fe8750deacb12d364233860258f8ed31.jpeg?odnHeight=200&odnWidth=200&odnBg=FFFFFF" alt="NavePoint 1U Vented Cantilever Shelf" loading="lazy"></td>
+      <td><a href="https://www.walmart.com/ip/NavePoint-1U-Rack-Shelf-Server-Rack-Network-Cabinets-Cantilever-Rack-Mount-Shelf-10-Deep-White-Pre-Assembled-Compatible-19-Inch-Standard-Equipment/5072216630" target="_blank" rel="noopener">NavePoint 1U Vented Cantilever Shelf, 10" deep, white</a> <span class="qty">×1</span> <span class="arrived">Delivered</span><br><span class="anno-muted">Holds the Sonic-supplied fiber ONT on top (ONT body sits in U6 space). U-POE-at injector also rides on this shelf.</span></td>
       <td>NavePoint · 1U 10"D</td>
       <td>Cradle for the Sonic fiber ONT and the U-POE-at injector for the 3rd AP.</td>
     </tr>
     <tr>
       <td class="u">U4</td>
+      <td class="thumb">—</td>
       <td>Blank — airflow gap above UDM-SE, reserved for future <i>UniFi Pro 24 PoE</i> switch</td>
       <td>—</td>
       <td>Don't fill. Provides stack-effect cooling for the UDM-SE directly below. <b>Port-count note:</b> 12 home runs vs. 8 UDM-SE ports — 3 APs + 1 G6 camera use 4 PoE+ ports; 4 of the 8 wall jacks can be patched in at once, the other 4 stay terminated at the panel but unpatched. Day you want all 8 wall jacks simultaneously live → drop a switch in this U.</td>
     </tr>
     <tr>
       <td class="u">U3</td>
-      <td><a href="https://store.ui.com/us/en/pro/category/all-unifi-cloud-gateways/products/udm-se" target="_blank" rel="noopener">Ubiquiti UniFi Dream Machine Special Edition (UDM-SE)</a> <span class="qty">×1</span> · <a href="https://dl.ui.com/qig/udm-se/#index" target="_blank" rel="noopener">install guide</a><br>+ <a href="https://www.amazon.com/s?k=WD+Purple+8TB+WD85PURZ" target="_blank" rel="noopener">WD Purple 8TB HDD (WD85PURZ)</a> installed in drive bay <span class="qty">×1</span></td>
+      <td class="thumb"><img src="https://images.svc.ui.com/?u=https%3A%2F%2Fcdn.ecomm.ui.com%2Fproducts%2F1b6fcc08-a6b8-4496-a831-6125a47c412f%2Fc1d1e0e0-4ec6-4760-9bc2-81cdfdf3eaa5.png&q=75&w=400" alt="Ubiquiti UDM-SE" loading="lazy"><br><img src="https://m.media-amazon.com/images/I/71Od7Xf5SwL._AC_UY218_.jpg" alt="WD Purple 8TB" loading="lazy" style="margin-top:6px"></td>
+      <td><a href="https://store.ui.com/us/en/pro/category/all-unifi-cloud-gateways/products/udm-se" target="_blank" rel="noopener">Ubiquiti UniFi Dream Machine Special Edition (UDM-SE)</a> <span class="qty">×1</span> · <a href="https://dl.ui.com/qig/udm-se/#index" target="_blank" rel="noopener">install guide</a> <span class="arrived">Delivered 2026-05-29</span><br>+ <a href="https://www.amazon.com/s?k=WD+Purple+8TB+WD85PURZ" target="_blank" rel="noopener">WD Purple 8TB HDD (WD85PURZ)</a> installed in drive bay <span class="qty">×1</span> <span class="arrived">Delivered 2026-05-29</span></td>
       <td>Ubiquiti · UDM-SE<br>Western Digital · WD85PURZ</td>
       <td>Router, network controller, 8-port PoE+ switch, UniFi Protect NVR. WAN port connects up to the ONT above; PoE ports connect down through U2 to the U1 patch panel.</td>
     </tr>
     <tr>
       <td class="u">U2</td>
-      <td><a href="https://www.walmart.com/ip/CyberPower-CPS1215RMS-Rackmount-15A-PDU-Surge-12-x-NEMA-5-15R-1800VA-1U-19-Rack-mountable/13044293" target="_blank" rel="noopener">CyberPower CPS1215RMS 1U Rackmount Surge PDU</a>, 12 × NEMA 5-15R <span class="qty">×1</span></td>
+      <td class="thumb"><img src="https://i5.walmartimages.com/seo/CyberPower-Rackbar-Surge-Protection-CPS1215RMS-surge-protector_fa2464ea-ff58-4e7c-bec1-fe6a08cc76eb.f17857f90718173f3eae9eca7a16b83a.jpeg?odnHeight=200&odnWidth=200&odnBg=FFFFFF" alt="CyberPower CPS1215RMS" loading="lazy"></td>
+      <td><a href="https://www.walmart.com/ip/CyberPower-CPS1215RMS-Rackmount-15A-PDU-Surge-12-x-NEMA-5-15R-1800VA-1U-19-Rack-mountable/13044293" target="_blank" rel="noopener">CyberPower CPS1215RMS 1U Rackmount Surge PDU</a>, 12 × NEMA 5-15R <span class="qty">×1</span> <span class="arrived">Delivered</span></td>
       <td>CyberPower · CPS1215RMS</td>
       <td>Single plug into the dedicated 15A wall receptacle. All rack power lands here. Position between UDM-SE and patch panel keeps power physically separated from data.</td>
     </tr>
     <tr>
       <td class="u">U1</td>
-      <td><a href="https://www.amazon.com/TRENDnet-24-Port-Keystone-Rackmount-TC-KP24/dp/B07M5QBL8G" target="_blank" rel="noopener">TRENDnet 24-Port Blank Keystone 1U Patch Panel (TC-KP24)</a> <span class="qty">×1</span><br>+ <a href="https://www.amazon.com/dp/B07L8C3F6C" target="_blank" rel="noopener">VCE Cat6 Keystone Jack — 25-Pack, White (90° punch-down)</a> <span class="qty">×1 pack</span></td>
+      <td class="thumb"><img src="https://m.media-amazon.com/images/I/61Ny4nXFxML._SX522_.jpg" alt="TRENDnet TC-KP24 Patch Panel" loading="lazy"><br><img src="https://m.media-amazon.com/images/I/71R8kntkHdL._SX522_.jpg" alt="VCE Cat6 Keystone Jack 25-pack" loading="lazy" style="margin-top:6px"></td>
+      <td><a href="https://www.amazon.com/TRENDnet-24-Port-Keystone-Rackmount-TC-KP24/dp/B07M5QBL8G" target="_blank" rel="noopener">TRENDnet 24-Port Blank Keystone 1U Patch Panel (TC-KP24)</a> <span class="qty">×1</span> <span class="arrived">Delivered 2026-05-28</span><br>+ <a href="https://www.amazon.com/dp/B07L8C3F6C" target="_blank" rel="noopener">VCE Cat6 Keystone Jack — 25-Pack, White (90° punch-down)</a> <span class="qty">×1 pack</span> <span class="arrived">Delivered 2026-06-01</span></td>
       <td>TRENDnet · TC-KP24<br>VCE · B07L8C3F6C</td>
       <td>Bottom of rack, directly above the cabinet's bottom cable slot. <b>12 keystones populated</b> (8 wall jacks per BOM row 27 + 3 APs + 1 G6 cam); other 12 cutouts left empty. <b>Label every populated slot</b> with the destination (e.g. <code>OFFICE-1</code>, <code>LR-AP</code>, <code>G6-CAM</code>) — empty/unlabeled = no cable. Keep the 13 leftover keystones as field spares for future drops.</td>
     </tr>
     <tr>
       <td class="u">Cab</td>
-      <td><a href="https://navepoint.com/navepoint-19-inch-wide-networking-cabinet-6u-17-inches-deep-white/?sku=00407311" target="_blank" rel="noopener">NavePoint 6U Network Cabinet, Glass Door, White, 17" deep</a> <span class="qty">×1</span></td>
+      <td class="thumb"><img src="https://cdn11.bigcommerce.com/s-kwazlhiil2/products/2370/images/41165/00407311_1__02148.1694479399.386.513.jpg?c=2" alt="NavePoint 6U Cabinet" loading="lazy"></td>
+      <td><a href="https://navepoint.com/navepoint-19-inch-wide-networking-cabinet-6u-17-inches-deep-white/?sku=00407311" target="_blank" rel="noopener">NavePoint 6U Network Cabinet, Glass Door, White, 17" deep</a> <span class="qty">×1</span> <span class="arrived">Delivered</span></td>
       <td>NavePoint · 6U 17"D</td>
       <td>The cabinet itself. Wall-mounted on the plywood backer.</td>
     </tr>
@@ -952,20 +960,29 @@
 <h2>Connected, but not in the rack</h2>
 <table>
   <thead>
-    <tr><th>Item</th><th style="width:22%">Mfr / Model</th><th>Where it lives</th><th style="width:22%">Powered from</th></tr>
+    <tr><th style="width:11%">Photo</th><th>Item</th><th style="width:18%">Mfr / Model</th><th>Where it lives</th><th style="width:20%">Powered from</th></tr>
   </thead>
   <tbody>
     <tr>
-      <td><a href="https://store.ui.com/us/en/category/wifi-flagship/products/u7-pro-xg?variant=u7-pro-xg-us" target="_blank" rel="noopener">Ubiquiti U7 Pro XG</a> Wi-Fi 7 Access Point <span class="qty">×3</span></td>
+      <td class="thumb"><img src="https://images.svc.ui.com/?u=https%3A%2F%2Fcdn.ecomm.ui.com%2Fproducts%2Fa433b9e5-4dd1-4784-adf8-9d12bcba4c87%2Fb5d0e179-270f-468d-beeb-9675e36d44b3.png&q=75&w=400" alt="Ubiquiti U7 Pro XG" loading="lazy"></td>
+      <td><a href="https://store.ui.com/us/en/category/wifi-flagship/products/u7-pro-xg?variant=u7-pro-xg-us" target="_blank" rel="noopener">Ubiquiti U7 Pro XG</a> Wi-Fi 7 Access Point <span class="qty">×3</span> <span class="arrived">Delivered 2026-05-29</span></td>
       <td>Ubiquiti · U7-Pro-XG</td>
       <td>Ceiling-mounted: Living Room, Bedroom 1, Family Room. Each on its own CAT6 home run to the patch panel.</td>
       <td>2 of 3: PoE+ direct from UDM-SE.<br>3rd: <a href="https://store.ui.com/us/en/pro/products/u-poe-at" target="_blank" rel="noopener">U-POE-at injector</a> (lives on the U5 shelf).</td>
     </tr>
     <tr>
-      <td><a href="https://store.ui.com/us/en/products/uvc-g6-bullet" target="_blank" rel="noopener">Ubiquiti G6 Bullet</a> camera <span class="qty">×1</span> (more later)</td>
+      <td class="thumb"><img src="https://images.svc.ui.com/?u=https%3A%2F%2Fcdn.ecomm.ui.com%2Fproducts%2F5dc40311-0e08-4eaa-b901-472cc707b436%2Ffe78ba5e-dc4f-4db5-b26f-dc0e628c456e.png&q=75&w=400" alt="Ubiquiti G6 Bullet camera" loading="lazy"></td>
+      <td><a href="https://store.ui.com/us/en/products/uvc-g6-bullet" target="_blank" rel="noopener">Ubiquiti G6 Bullet</a> camera <span class="qty">×1</span> <span class="arrived">Delivered 2026-05-29</span> (more later)</td>
       <td>Ubiquiti · UVC-G6-Bullet</td>
       <td>Exterior. CAT6 home run to the patch panel.</td>
       <td>PoE from UDM-SE.</td>
+    </tr>
+    <tr>
+      <td class="thumb"><img src="https://images.svc.ui.com/?u=https%3A%2F%2Fcdn.ecomm.ui.com%2Fproducts%2F7dd20fea-c0f0-4018-be5e-c2b54777fb28%2F76a5f65b-e1b7-4677-92c7-3ef6d1ef40df.png&q=75&w=400" alt="Ubiquiti U-POE-at injector" loading="lazy"></td>
+      <td><a href="https://store.ui.com/us/en/pro/products/u-poe-at" target="_blank" rel="noopener">Ubiquiti U-POE-at PoE+ injector</a> <span class="qty">×1</span> <span class="arrived">Delivered 2026-05-29</span></td>
+      <td>Ubiquiti · U-POE-at</td>
+      <td>Sits on the U5 shelf inside the cabinet.</td>
+      <td>Plugs into the U2 PDU (wall-wart).</td>
     </tr>
   </tbody>
 </table>
@@ -974,7 +991,7 @@
   <h3>Wire-up flow — for Ivan</h3>
   <ol>
     <li>Sonic fiber comes up through the dedicated bottom conduit → <b>ONT</b> (sits on the U5 shelf). ONT Ethernet out drops <b>2U down</b> to the <b>UDM-SE WAN port (U3)</b>.</li>
-    <li>Each house CAT6 home run enters the cabinet through the bottom cable slot and is <b>punched down on a Cable Matters keystone</b>, which snaps into the U1 patch panel cutout directly above. <b>Install keystones only in slots that have a cable behind them</b> (8 of 24). Label each populated slot with the destination (room + device); leave unused cutouts empty and unlabeled.</li>
+    <li>Each house CAT6 home run enters the cabinet through the bottom cable slot and is <b>punched down on a VCE Cat6 keystone</b>, which snaps into the U1 patch panel cutout directly above. <b>Install keystones only in slots that have a cable behind them</b> (12 of 24). Label each populated slot with the destination (room + device); leave unused cutouts empty and unlabeled.</li>
     <li>Short 1-ft patch cables (<b>from the UniFi order — no need to buy</b>) jump from <b>U1 patch panel ports up past the U2 PDU</b> to <b>UDM-SE PoE+ ports (U3)</b>. Route along the right rail with velcro so they skirt the PDU face cleanly.</li>
     <li>All AC: every device's power cord plugs into the <b>U2 PDU</b>. PDU plugs into the dedicated 15A wall receptacle below the cabinet.</li>
     <li>3rd AP (longest run): U1 patch panel port → <b>U-POE-at injector</b> (sitting on the U5 shelf) data-in, injector data+power-out → that AP. Injector wall-wart plugs into the U2 PDU.</li>
