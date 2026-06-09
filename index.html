@@ -46,6 +46,8 @@
   th{font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:0.05em;color:var(--muted);background:#faf7f0}
   td.u{font-variant-numeric:tabular-nums;color:var(--accent);font-weight:700;white-space:nowrap;font-size:15px}
   td .qty{display:inline-block;background:#efe7c8;border:1px solid #c9bd86;color:#3a3010;font-size:11px;padding:1px 6px;border-radius:99px;margin-left:6px;font-variant-numeric:tabular-nums;font-weight:600}
+  td .arrived{display:inline-block;background:#dff0e0;border:1px solid #6fa771;color:#234d2a;font-size:11px;padding:1px 8px;border-radius:99px;margin-left:6px;font-weight:600;white-space:nowrap}
+  td .arrived::before{content:"✓ "}
   td a{font-weight:600}
   ul.notes{margin:8px 0 0;padding-left:20px}
   ul.notes li{margin:4px 0}
@@ -536,99 +538,107 @@
 <!-- ============== RACK ELEVATION (front view) ============== -->
 <h2>Rack elevation — what goes in each U</h2>
 <div class="stage">
-  <svg viewBox="0 0 1040 380" xmlns="http://www.w3.org/2000/svg" aria-label="NavePoint 6U front view, detailed">
+  <svg viewBox="0 0 1040 540" xmlns="http://www.w3.org/2000/svg" aria-label="NavePoint 6U front view, detailed">
     <!-- cabinet body -->
-    <rect x="40" y="20" width="960" height="340" rx="6" fill="#f5f3ee" stroke="#111" stroke-width="2"/>
+    <rect x="40" y="20" width="960" height="500" rx="6" fill="#f5f3ee" stroke="#111" stroke-width="2"/>
     <!-- top vents -->
     <g stroke="#9a9486">
       <line x1="80" y1="32" x2="960" y2="32"/>
       <line x1="80" y1="36" x2="960" y2="36"/>
       <line x1="80" y1="40" x2="960" y2="40"/>
     </g>
-    <!-- inner rack opening -->
-    <rect x="100" y="56" width="850" height="278" fill="#161616"/>
+    <!-- inner rack opening (6U × 70px = 420px) -->
+    <rect x="100" y="56" width="850" height="420" fill="#161616"/>
     <!-- rails -->
-    <rect x="100" y="56" width="14" height="278" fill="#0a0a0a"/>
-    <rect x="936" y="56" width="14" height="278" fill="#0a0a0a"/>
+    <rect x="100" y="56" width="14" height="420" fill="#0a0a0a"/>
+    <rect x="936" y="56" width="14" height="420" fill="#0a0a0a"/>
 
-    <!-- U labels on rails -->
+    <!-- U labels on rails (centered vertically in each 70px row) -->
     <g>
-      <g><rect x="118" y="62" width="22" height="18" rx="2" fill="#3a3a3a"/><text x="129" y="76" class="urail" text-anchor="middle">U6</text></g>
-      <g><rect x="118" y="108" width="22" height="18" rx="2" fill="#3a3a3a"/><text x="129" y="122" class="urail" text-anchor="middle">U5</text></g>
-      <g><rect x="118" y="154" width="22" height="18" rx="2" fill="#3a3a3a"/><text x="129" y="168" class="urail" text-anchor="middle">U4</text></g>
-      <g><rect x="118" y="200" width="22" height="18" rx="2" fill="#3a3a3a"/><text x="129" y="214" class="urail" text-anchor="middle">U3</text></g>
-      <g><rect x="118" y="246" width="22" height="18" rx="2" fill="#3a3a3a"/><text x="129" y="260" class="urail" text-anchor="middle">U2</text></g>
-      <g><rect x="118" y="292" width="22" height="18" rx="2" fill="#3a3a3a"/><text x="129" y="306" class="urail" text-anchor="middle">U1</text></g>
+      <g><rect x="118" y="78" width="22" height="20" rx="2" fill="#3a3a3a"/><text x="129" y="93" class="urail" text-anchor="middle">U6</text></g>
+      <g><rect x="118" y="148" width="22" height="20" rx="2" fill="#3a3a3a"/><text x="129" y="163" class="urail" text-anchor="middle">U5</text></g>
+      <g><rect x="118" y="218" width="22" height="20" rx="2" fill="#3a3a3a"/><text x="129" y="233" class="urail" text-anchor="middle">U4</text></g>
+      <g><rect x="118" y="288" width="22" height="20" rx="2" fill="#3a3a3a"/><text x="129" y="303" class="urail" text-anchor="middle">U3</text></g>
+      <g><rect x="118" y="358" width="22" height="20" rx="2" fill="#3a3a3a"/><text x="129" y="373" class="urail" text-anchor="middle">U2</text></g>
+      <g><rect x="118" y="428" width="22" height="20" rx="2" fill="#3a3a3a"/><text x="129" y="443" class="urail" text-anchor="middle">U1</text></g>
     </g>
 
-    <!-- U6 (top): blank — ONT physically sits in this space, on top of U5 shelf -->
+    <!-- U6 (top): ONT physically lives here (sits on top of the U5 shelf below) -->
     <g>
-      <rect x="150" y="56" width="786" height="46" fill="#262626" stroke="#000"/>
-      <text x="543" y="83" class="lbl-light" text-anchor="middle">U6  ·  (ONT occupies this space — sits on top of the U5 shelf)</text>
+      <rect x="150" y="56" width="786" height="70" fill="#1f1f1f" stroke="#000"/>
+      <!-- ONT box, centered -->
+      <rect x="370" y="72" width="280" height="32" rx="3" fill="#2a2a2a" stroke="#000"/>
+      <circle cx="388" cy="88" r="3" fill="#7ee37e"/>
+      <circle cx="402" cy="88" r="3" fill="#7ee37e"/>
+      <circle cx="416" cy="88" r="3" fill="#ffb84d"/>
+      <text x="510" y="92" class="lbl-light" text-anchor="middle">SONIC FIBER ONT</text>
+      <!-- descriptor at bottom of row -->
+      <text x="543" y="118" class="lbl-light" text-anchor="middle" opacity="0.85">U6  ·  ONT sits on top of the U5 shelf — fiber jumper enters through the bottom slot</text>
     </g>
 
-    <!-- U5: 1U vented shelf, ONT on top -->
+    <!-- U5: 1U vented shelf -->
     <g>
-      <rect x="150" y="102" width="786" height="46" fill="#efeae0" stroke="#7a7468"/>
+      <rect x="150" y="126" width="786" height="70" fill="#efeae0" stroke="#7a7468"/>
       <g stroke="#b3ad9d" stroke-width="0.8">
-        <line x1="170" y1="122" x2="916" y2="122"/>
-        <line x1="170" y1="128" x2="916" y2="128"/>
-        <line x1="170" y1="134" x2="916" y2="134"/>
-        <line x1="170" y1="140" x2="916" y2="140"/>
+        <line x1="170" y1="146" x2="916" y2="146"/>
+        <line x1="170" y1="152" x2="916" y2="152"/>
+        <line x1="170" y1="158" x2="916" y2="158"/>
+        <line x1="170" y1="164" x2="916" y2="164"/>
+        <line x1="170" y1="170" x2="916" y2="170"/>
       </g>
-      <!-- ONT box sitting on top of shelf (in U6 space) -->
-      <g>
-        <rect x="380" y="78" width="260" height="24" rx="3" fill="#2a2a2a" stroke="#000"/>
-        <circle cx="396" cy="90" r="2.5" fill="#7ee37e"/>
-        <circle cx="408" cy="90" r="2.5" fill="#7ee37e"/>
-        <circle cx="420" cy="90" r="2.5" fill="#ffb84d"/>
-        <text x="510" y="94" class="lbl-light" text-anchor="middle">SONIC FIBER ONT (sits on shelf)</text>
-      </g>
-      <text x="543" y="120" class="lbl-dark" text-anchor="middle">U5  ·  NAVEPOINT 1U VENTED CANTILEVER SHELF  ·  10" DEEP</text>
+      <text x="543" y="188" class="lbl-dark" text-anchor="middle">U5  ·  NAVEPOINT 1U VENTED CANTILEVER SHELF  ·  10" DEEP</text>
     </g>
 
     <!-- U4: blank -->
     <g>
-      <rect x="150" y="148" width="786" height="46" fill="#262626" stroke="#000"/>
-      <text x="543" y="176" class="lbl-light" text-anchor="middle">U4  ·  BLANK PANEL  (airflow gap above UDM-SE · reserved for future UniFi Pro 24 PoE)</text>
+      <rect x="150" y="196" width="786" height="70" fill="#262626" stroke="#000"/>
+      <text x="543" y="232" class="lbl-light" text-anchor="middle">U4  ·  BLANK PANEL</text>
+      <text x="543" y="250" class="lbl-light" text-anchor="middle" opacity="0.7">airflow gap above UDM-SE · reserved for future UniFi Pro 24 PoE switch</text>
     </g>
 
     <!-- U3: UDM-SE -->
     <g>
-      <rect x="150" y="194" width="786" height="46" fill="#0e0e0e" stroke="#000"/>
-      <rect x="166" y="206" width="56" height="22" rx="2" fill="#1f6d52"/>
-      <text x="194" y="222" class="lbl-light" text-anchor="middle">UDM-SE</text>
-      <!-- 8 PoE -->
+      <rect x="150" y="266" width="786" height="70" fill="#0e0e0e" stroke="#000"/>
+      <!-- display screen -->
+      <rect x="166" y="284" width="56" height="26" rx="2" fill="#1f6d52"/>
+      <text x="194" y="301" class="lbl-light" text-anchor="middle">UDM-SE</text>
+
+      <!-- 8 PoE+ ports (group label above ports) -->
+      <text x="395" y="280" class="lbl-light" text-anchor="middle">8× 1G PoE+ (APs &amp; cameras)</text>
       <g fill="#1f1f1f" stroke="#666">
-        <rect x="246" y="207" width="38" height="20"/>
-        <rect x="286" y="207" width="38" height="20"/>
-        <rect x="326" y="207" width="38" height="20"/>
-        <rect x="366" y="207" width="38" height="20"/>
-        <rect x="406" y="207" width="38" height="20"/>
-        <rect x="446" y="207" width="38" height="20"/>
-        <rect x="486" y="207" width="38" height="20"/>
-        <rect x="526" y="207" width="38" height="20"/>
+        <rect x="236" y="286" width="36" height="22"/>
+        <rect x="274" y="286" width="36" height="22"/>
+        <rect x="312" y="286" width="36" height="22"/>
+        <rect x="350" y="286" width="36" height="22"/>
+        <rect x="388" y="286" width="36" height="22"/>
+        <rect x="426" y="286" width="36" height="22"/>
+        <rect x="464" y="286" width="36" height="22"/>
+        <rect x="502" y="286" width="36" height="22"/>
       </g>
-      <text x="405" y="203" class="lbl-light" text-anchor="middle">8× 1G PoE+ (APs &amp; cameras)</text>
-      <!-- 2 SFP+ (one is 10G WAN, one is 10G LAN — unused in our setup) -->
+
+      <!-- 2 SFP+ ports -->
+      <text x="582" y="280" class="lbl-light" text-anchor="middle">2× 10G SFP+ (unused)</text>
       <g fill="#163b56" stroke="#888">
-        <rect x="586" y="207" width="50" height="20"/>
-        <rect x="640" y="207" width="50" height="20"/>
+        <rect x="550" y="286" width="32" height="22"/>
+        <rect x="584" y="286" width="32" height="22"/>
       </g>
-      <text x="638" y="203" class="lbl-light" text-anchor="middle">2× 10G SFP+ (unused)</text>
-      <!-- 2.5G WAN RJ-45 port — this is where Sonic ONT plugs in (Option B from QIG) -->
-      <rect x="708" y="207" width="56" height="20" fill="#1f4d3f" stroke="#7be39a" stroke-width="1.4"/>
-      <text x="736" y="203" class="lbl-light" text-anchor="middle" fill="#9be8b3">2.5G WAN</text>
-      <text x="736" y="221" class="lbl-light" text-anchor="middle">RJ-45 ← Sonic ONT</text>
+
+      <!-- 2.5G WAN RJ-45 (Sonic input) -->
+      <text x="660" y="280" class="lbl-light" text-anchor="middle" fill="#9be8b3">2.5G WAN ← Sonic</text>
+      <rect x="624" y="286" width="72" height="22" fill="#1f4d3f" stroke="#7be39a" stroke-width="1.4"/>
+      <text x="660" y="301" class="lbl-light" text-anchor="middle" fill="#9be8b3">RJ-45</text>
+
       <!-- HDD bay -->
-      <rect x="780" y="203" width="140" height="28" fill="#1a1a1a" stroke="#7a5a2a" stroke-dasharray="3 3"/>
-      <text x="850" y="221" class="lbl-light" text-anchor="middle" fill="#e4b87a">WD PURPLE 8TB (in bay)</text>
-      <text x="543" y="237" class="lbl-light" text-anchor="middle">U3  ·  UBIQUITI DREAM MACHINE SE  —  router / controller / 8-port PoE switch / Protect NVR</text>
+      <text x="800" y="280" class="lbl-light" text-anchor="middle" fill="#e4b87a">WD PURPLE 8TB (in bay)</text>
+      <rect x="720" y="286" width="160" height="22" fill="#1a1a1a" stroke="#7a5a2a" stroke-dasharray="3 3"/>
+
+      <!-- descriptor at bottom of row -->
+      <text x="543" y="328" class="lbl-light" text-anchor="middle" opacity="0.85">U3  ·  UBIQUITI DREAM MACHINE SE  —  router / controller / 8-port PoE switch / Protect NVR</text>
     </g>
 
-    <!-- U2: PDU (between UDM-SE and patch panel) -->
+    <!-- U2: PDU -->
     <g>
-      <rect x="150" y="240" width="786" height="46" fill="#0e0e0e" stroke="#000"/>
+      <rect x="150" y="336" width="786" height="70" fill="#0e0e0e" stroke="#000"/>
       <defs>
         <g id="outlet">
           <rect x="0" y="0" width="38" height="30" rx="3" fill="#d8d8d8" stroke="#000" stroke-width="0.4"/>
@@ -637,47 +647,46 @@
           <path d="M16 22 a3 3 0 1 0 6 0 v-1 h-6 z" fill="#000"/>
         </g>
       </defs>
-      <use href="#outlet" x="172" y="248"/>
-      <use href="#outlet" x="224" y="248"/>
-      <use href="#outlet" x="276" y="248"/>
-      <use href="#outlet" x="328" y="248"/>
-      <use href="#outlet" x="380" y="248"/>
-      <use href="#outlet" x="432" y="248"/>
-      <use href="#outlet" x="484" y="248"/>
-      <!-- breaker -->
-      <rect x="546" y="252" width="50" height="22" fill="#b33" stroke="#000"/>
-      <text x="571" y="267" class="lbl-light" text-anchor="middle">15A CB</text>
-      <!-- main switch -->
-      <rect x="606" y="252" width="56" height="22" fill="#222" stroke="#666"/>
-      <text x="634" y="267" class="lbl-light" text-anchor="middle">MAIN PWR</text>
-      <!-- brand -->
-      <text x="850" y="267" class="lbl-light" text-anchor="middle">CyberPower CPS1215RMS</text>
-      <text x="543" y="282" class="lbl-light" text-anchor="middle">U2  ·  1U RACKMOUNT SURGE PDU  ·  12 × NEMA 5-15R  ·  powers everything in the rack</text>
+      <use href="#outlet" x="172" y="350"/>
+      <use href="#outlet" x="224" y="350"/>
+      <use href="#outlet" x="276" y="350"/>
+      <use href="#outlet" x="328" y="350"/>
+      <use href="#outlet" x="380" y="350"/>
+      <use href="#outlet" x="432" y="350"/>
+      <use href="#outlet" x="484" y="350"/>
+      <rect x="546" y="354" width="50" height="22" fill="#b33" stroke="#000"/>
+      <text x="571" y="369" class="lbl-light" text-anchor="middle">15A CB</text>
+      <rect x="606" y="354" width="56" height="22" fill="#222" stroke="#666"/>
+      <text x="634" y="369" class="lbl-light" text-anchor="middle">MAIN PWR</text>
+      <text x="800" y="369" class="lbl-light" text-anchor="middle">CyberPower CPS1215RMS</text>
+      <!-- descriptor at bottom of row -->
+      <text x="543" y="398" class="lbl-light" text-anchor="middle" opacity="0.85">U2  ·  1U RACKMOUNT SURGE PDU  ·  12 × NEMA 5-15R  ·  powers everything in the rack</text>
     </g>
 
-    <!-- U1: patch panel (bottom, closest to bottom cable knockouts) -->
+    <!-- U1: patch panel -->
     <g>
-      <rect x="150" y="286" width="786" height="46" fill="#141414" stroke="#000"/>
+      <rect x="150" y="406" width="786" height="70" fill="#141414" stroke="#000"/>
       <!-- 24 keystones, 2 banks of 12 -->
       <g fill="#d6d6d6" stroke="#000" stroke-width="0.4">
         <g>
-          <rect x="178" y="297" width="22" height="22"/><rect x="202" y="297" width="22" height="22"/>
-          <rect x="226" y="297" width="22" height="22"/><rect x="250" y="297" width="22" height="22"/>
-          <rect x="274" y="297" width="22" height="22"/><rect x="298" y="297" width="22" height="22"/>
-          <rect x="322" y="297" width="22" height="22"/><rect x="346" y="297" width="22" height="22"/>
-          <rect x="370" y="297" width="22" height="22"/><rect x="394" y="297" width="22" height="22"/>
-          <rect x="418" y="297" width="22" height="22"/><rect x="442" y="297" width="22" height="22"/>
+          <rect x="178" y="420" width="22" height="22"/><rect x="202" y="420" width="22" height="22"/>
+          <rect x="226" y="420" width="22" height="22"/><rect x="250" y="420" width="22" height="22"/>
+          <rect x="274" y="420" width="22" height="22"/><rect x="298" y="420" width="22" height="22"/>
+          <rect x="322" y="420" width="22" height="22"/><rect x="346" y="420" width="22" height="22"/>
+          <rect x="370" y="420" width="22" height="22"/><rect x="394" y="420" width="22" height="22"/>
+          <rect x="418" y="420" width="22" height="22"/><rect x="442" y="420" width="22" height="22"/>
         </g>
         <g transform="translate(394 0)">
-          <rect x="178" y="297" width="22" height="22"/><rect x="202" y="297" width="22" height="22"/>
-          <rect x="226" y="297" width="22" height="22"/><rect x="250" y="297" width="22" height="22"/>
-          <rect x="274" y="297" width="22" height="22"/><rect x="298" y="297" width="22" height="22"/>
-          <rect x="322" y="297" width="22" height="22"/><rect x="346" y="297" width="22" height="22"/>
-          <rect x="370" y="297" width="22" height="22"/><rect x="394" y="297" width="22" height="22"/>
-          <rect x="418" y="297" width="22" height="22"/><rect x="442" y="297" width="22" height="22"/>
+          <rect x="178" y="420" width="22" height="22"/><rect x="202" y="420" width="22" height="22"/>
+          <rect x="226" y="420" width="22" height="22"/><rect x="250" y="420" width="22" height="22"/>
+          <rect x="274" y="420" width="22" height="22"/><rect x="298" y="420" width="22" height="22"/>
+          <rect x="322" y="420" width="22" height="22"/><rect x="346" y="420" width="22" height="22"/>
+          <rect x="370" y="420" width="22" height="22"/><rect x="394" y="420" width="22" height="22"/>
+          <rect x="418" y="420" width="22" height="22"/><rect x="442" y="420" width="22" height="22"/>
         </g>
       </g>
-      <text x="543" y="328" class="lbl-light" text-anchor="middle">U1  ·  TRENDnet 24-PORT KEYSTONE PATCH PANEL  —  terminates every house CAT6 home run (entries from bottom knockouts)</text>
+      <!-- descriptor at bottom of row -->
+      <text x="543" y="468" class="lbl-light" text-anchor="middle" opacity="0.85">U1  ·  TRENDnet 24-PORT KEYSTONE PATCH PANEL  —  every house CAT6 home run enters from the bottom slot</text>
     </g>
 
   </svg>
